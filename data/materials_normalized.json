@@ -1,0 +1,3856 @@
+[
+  {
+    "id": "aluminum_6061_t6",
+    "name": "Aluminum 6061-T6",
+    "category": "metal",
+    "composition": "Al-1.0Mg-0.6Si-0.28Cu-0.2Cr",
+    "grade": "6061-T6 (Solution heat treated and artificially aged)",
+    "description": "Widely used general-purpose aerospace and structural aluminum alloy with good weldability, corrosion resistance, and strength.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 2700.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "condition": "Room Temperature",
+        "original_value": 2700.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 167.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "condition": "25 °C",
+        "original_value": 167.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 896.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "condition": "25 °C",
+        "original_value": 896.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.36e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "condition": "20–100 °C",
+        "original_value": 2.36e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 68900000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "condition": "Room Temperature",
+        "original_value": 68900000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 276000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "condition": "0.2% offset",
+        "original_value": 276000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 310000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "condition": "Ultimate",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 855.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "condition": "Solidus",
+        "original_value": 855.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "aluminum_7075_t6",
+    "name": "Aluminum 7075-T6",
+    "category": "metal",
+    "composition": "Al-5.6Zn-2.5Mg-1.6Cu-0.23Cr",
+    "grade": "7075-T6 (High strength aircraft alloy)",
+    "description": "High-strength zinc-alloyed aluminum primarily used in aircraft airframes, spacecraft structures, and high-stress rocketry components.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 2810.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2810.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 130.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 130.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 960.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 960.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.34e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 2.34e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 71700000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 71700000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 503000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 503000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 572000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 750.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 750.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "aluminum_2024_t3",
+    "name": "Aluminum 2024-T3",
+    "category": "metal",
+    "composition": "Al-4.4Cu-1.5Mg-0.6Mn",
+    "grade": "2024-T3 (High fatigue resistance)",
+    "description": "High yield strength aluminum alloy with exceptional cyclic fatigue resistance, widely used in aircraft fuselage skins and tension members.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 2780.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2780.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 121.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 121.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 875.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 875.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.32e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 2.32e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 73100000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 73100000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 345000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 345000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 483000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 775.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 775.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "titanium_ti6al4v_grade5",
+    "name": "Titanium Ti-6Al-4V (Grade 5)",
+    "category": "metal",
+    "composition": "Ti-6Al-4V (Alpha-Beta alloy)",
+    "grade": "Grade 5 / Annealed",
+    "description": "The workhorse titanium alloy of the aerospace industry, offering superb strength-to-weight ratio, fracture toughness, and corrosion immunity.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 4430.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 4430.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 6.7,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "condition": "Room Temp",
+        "original_value": 6.7,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 526.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 526.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 8.6e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 8.6e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 113800000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 113800000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 880000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 880000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 950000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.35,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "condition": "Mill finish",
+        "original_value": 0.35,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1933.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1933.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "titanium_ti6al4v_eli",
+    "name": "Titanium Ti-6Al-4V ELI (Grade 23)",
+    "category": "metal",
+    "composition": "Ti-6Al-4V Extra Low Interstitials",
+    "grade": "Grade 23 (ELI)",
+    "description": "Extra-low interstitial purity version of Ti-6Al-4V engineered for cryogenic pressure vessels, medical implants, and fracture-critical space hardware.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 4430.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 4430.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 7.2,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 7.2,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 530.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 530.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 8.7e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 8.7e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 114000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 114000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 790000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 790000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 860000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1933.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1933.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "stainless_steel_304",
+    "name": "Stainless Steel 304",
+    "category": "metal",
+    "composition": "Fe-18Cr-8Ni-0.08C",
+    "grade": "AISI 304 (Austenitic)",
+    "description": "Standard austenitic 18/8 stainless steel providing excellent ductility, corrosion resistance, and cryogenic toughness.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 8000.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 8000.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 16.2,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 16.2,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 500.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 500.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.73e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.73e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 193000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 193000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 215000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 215000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 505000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.45,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "original_value": 0.45,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1673.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1673.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "stainless_steel_316l",
+    "name": "Stainless Steel 316L",
+    "category": "metal",
+    "composition": "Fe-17Cr-12Ni-2.5Mo-0.03C",
+    "grade": "AISI 316L (Low Carbon)",
+    "description": "Molybdenum-bearing austenitic stainless steel engineered for marine, chemical, and additive manufacturing space applications.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 8000.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 8000.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 16.3,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 16.3,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 500.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 500.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.6e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.6e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 193000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 193000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 290000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 290000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 580000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1648.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1648.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "stainless_steel_17_4_ph",
+    "name": "Stainless Steel 17-4 PH",
+    "category": "metal",
+    "composition": "Fe-17Cr-4Ni-4Cu-0.3Nb",
+    "grade": "Condition H900 (Precipitation Hardened)",
+    "description": "Martensitic precipitation-hardening stainless steel combining high tensile strength, hardness, and moderate corrosion resistance.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 7750.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 7750.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 18.4,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 18.4,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 460.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 460.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.08e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.08e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 196000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 196000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 1170000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 1170000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 1310000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1677.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1677.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "inconel_718",
+    "name": "Inconel 718",
+    "category": "metal",
+    "composition": "Ni-19Cr-18.5Fe-5.1Nb-3.0Mo-0.9Ti-0.5Al",
+    "grade": "Precipitation Hardened Superalloy",
+    "description": "High-strength, corrosion-resistant nickel-chromium superalloy capable of withstanding extreme cryogenic to 700 °C temperatures in rocket turbopumps and hot gas manifolds.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 8190.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 8190.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 11.4,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 11.4,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 435.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 435.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.3e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.3e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 200000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 200000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 1100000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 1100000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 1375000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.82,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "condition": "Oxidized",
+        "original_value": 0.82,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1609.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1609.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "inconel_625",
+    "name": "Inconel 625",
+    "category": "metal",
+    "composition": "Ni-21.5Cr-9.0Mo-3.6Nb-2.5Fe",
+    "grade": "Annealed Grade 1",
+    "description": "Solid-solution strengthened nickel-based superalloy delivering outstanding fatigue strength and oxidation resistance at elevated temperatures.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 8440.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 8440.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 9.8,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 9.8,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 410.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 410.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.28e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.28e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 208000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 208000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 517000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 517000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 930000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1563.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1563.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "copper_c10100_ofhc",
+    "name": "Oxygen-Free Electronic Copper (C10100)",
+    "category": "metal",
+    "composition": "Cu 99.99% min",
+    "grade": "OFE Copper (C10100)",
+    "description": "Ultra-pure oxygen-free copper with exceptional electrical and thermal conductivity, utilized in rocket combustion chamber liners and heat sinks.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 8940.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 8940.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 391.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "condition": "20 °C",
+        "original_value": 391.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 385.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 385.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.7e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.7e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 117000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 117000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 69000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "condition": "Annealed",
+        "original_value": 69000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 220000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1356.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1356.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "beryllium_copper_c17200",
+    "name": "Beryllium Copper (C17200)",
+    "category": "metal",
+    "composition": "Cu-1.9Be-0.2Co",
+    "grade": "TH04 / Full Hard Age Hardened",
+    "description": "Highest strength copper-based alloy combining high electrical conductivity with mechanical strength exceeding many alloy steels.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 8250.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 8250.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 105.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 105.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 420.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 420.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.7e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.7e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 131000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 131000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 1140000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 1140000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 1310000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1140.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1140.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "magnesium_az31b",
+    "name": "Magnesium Alloy AZ31B-H24",
+    "category": "metal",
+    "composition": "Mg-3.0Al-1.0Zn-0.2Mn",
+    "grade": "AZ31B-H24 (Strain hardened)",
+    "description": "Ultra-lightweight wrought magnesium alloy with good room-temperature strength, ductility, and vibration damping capacity.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 1770.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1770.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 96.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 96.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1020.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1020.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.6e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 2.6e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 45000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 45000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 220000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 220000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 290000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 905.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 905.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "tungsten_pure",
+    "name": "Tungsten (Pure W)",
+    "category": "metal",
+    "composition": "W 99.95% min",
+    "grade": "Unalloyed Refractory Metal",
+    "description": "Refractory metal with the highest melting point of all pure metals and exceptional resistance to high-temperature thermal creep.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 19250.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 19250.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 173.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 173.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 132.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 132.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 4.5e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 4.5e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 411000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 411000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 750000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 750000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 980000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 3695.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 3695.0,
+        "original_unit": "K"
+      },
+      "boiling_point": {
+        "value": 5828.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 5828.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "molybdenum_pure",
+    "name": "Molybdenum (Pure Mo)",
+    "category": "metal",
+    "composition": "Mo 99.95% min",
+    "grade": "Unalloyed Refractory Metal",
+    "description": "High-temperature refractory metal characterized by high elastic modulus, low thermal expansion, and high thermal conductivity.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 10220.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 10220.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 138.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 138.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 250.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 250.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 4.8e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 4.8e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 329000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 329000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 500000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 500000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 650000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 2896.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 2896.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "tantalum_pure",
+    "name": "Tantalum (Pure Ta)",
+    "category": "metal",
+    "composition": "Ta 99.9% min",
+    "grade": "Unalloyed Refractory Metal",
+    "description": "Dense, ductile refractory metal with exceptional chemical inertness and immunity to acid attack, used in electronics and hot-gas propulsion.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 16650.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 16650.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 57.5,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 57.5,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 140.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 140.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 6.3e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 6.3e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 186000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 186000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 200000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 200000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 300000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 3290.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 3290.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "steel_4140_chromoly",
+    "name": "Alloy Steel AISI 4140 (Chromoly)",
+    "category": "metal",
+    "composition": "Fe-1.0Cr-0.4C-0.8Mn-0.2Mo",
+    "grade": "Quenched & Tempered (315 °C)",
+    "description": "Versatile chromium-molybdenum through-hardening steel known for high fatigue strength, toughness, and torsional rigidity in shafts and fasteners.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 7850.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 7850.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 42.6,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 42.6,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 473.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 473.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.23e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.23e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 205000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 205000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 950000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 950000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 1080000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1690.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1690.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "steel_1018_mild",
+    "name": "Low Carbon Steel AISI 1018",
+    "category": "metal",
+    "composition": "Fe-0.18C-0.7Mn",
+    "grade": "Cold Drawn",
+    "description": "Standard free-machining low-carbon mild steel providing balanced machinability, weldability, and structural ductility.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 7870.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 7870.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 51.9,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 51.9,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 486.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 486.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.15e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.15e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 205000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 205000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 370000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 370000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 440000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1750.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1750.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "alumina_99_5",
+    "name": "Alumina Ceramic (Al2O3 99.5%)",
+    "category": "ceramic",
+    "composition": "Al2O3 99.5%",
+    "grade": "High Purity Sintered Technical Ceramic",
+    "description": "Hard technical oxide ceramic with high dielectric strength, wear resistance, chemical inertness, and high-temperature stiffness.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 3920.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 3920.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 35.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "condition": "20 °C",
+        "original_value": 35.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 880.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 880.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 8.1e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 8.1e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 370000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 370000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 220000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural/Tensile",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.7,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.7,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 2345.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 2345.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "silicon_carbide_sintered",
+    "name": "Silicon Carbide (SiC - Sintered Alpha)",
+    "category": "ceramic",
+    "composition": "SiC >98.5%",
+    "grade": "Sintered Alpha SiC",
+    "description": "Extremely hard, abrasion-resistant covalent ceramic with high thermal conductivity and low thermal expansion, used in rocket nozzles and armor.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 3150.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 3150.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 125.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 125.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 670.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 670.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 4e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 4e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 410000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 410000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 380000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.85,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.85,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 3003.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Sublimes/Decomposes",
+        "original_value": 3003.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "silicon_nitride_si3n4",
+    "name": "Silicon Nitride (Si3N4)",
+    "category": "ceramic",
+    "composition": "Si3N4 (Gas-pressure sintered)",
+    "grade": "GPSN High Toughness Grade",
+    "description": "High fracture toughness engineering ceramic with exceptional thermal shock resistance, used in turbine blades and precision bearings.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 3200.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 3200.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 30.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 30.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 710.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 710.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 3.2e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 3.2e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 310000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 310000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 750000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural strength",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.78,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.78,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 2173.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Decomposes",
+        "original_value": 2173.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "zirconia_ysz_3y_tzp",
+    "name": "Yttria-Stabilized Zirconia (3Y-TZP)",
+    "category": "ceramic",
+    "composition": "ZrO2 + 3 mol% Y2O3",
+    "grade": "Transformation-Toughened Zirconia",
+    "description": "Transformation-toughened ceramic featuring low thermal conductivity and thermal expansion matched closely to cast iron, utilized in thermal barrier coatings (TBC).",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 6050.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 6050.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 2.2,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 2.2,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 450.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 450.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.03e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.03e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 210000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 210000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 1200000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural strength",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.4,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.4,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 2988.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 2988.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "boron_carbide_b4c",
+    "name": "Boron Carbide (B4C)",
+    "category": "ceramic",
+    "composition": "B4C",
+    "grade": "Hot Pressed Technical Grade",
+    "description": "Known as 'black diamond', one of the hardest known materials with very low density, used in bulletproof armor and neutron absorber shielding.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 2520.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2520.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 30.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 30.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 950.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 950.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 5.6e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 5.6e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 460000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 460000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 350000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 2623.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 2623.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "aluminum_nitride_aln",
+    "name": "Aluminum Nitride (AlN)",
+    "category": "ceramic",
+    "composition": "AlN",
+    "grade": "Substrate Grade",
+    "description": "High thermal conductivity electrical insulator used for heat sinks in power electronics and semiconductor packaging.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 3260.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 3260.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 180.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 180.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 740.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 740.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 4.5e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 4.5e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 320000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 320000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 310000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 2473.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Decomposes",
+        "original_value": 2473.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "mullite_ceramic",
+    "name": "Mullite Ceramic (3Al2O3·2SiO2)",
+    "category": "ceramic",
+    "composition": "3Al2O3·2SiO2",
+    "grade": "Dense Sintered",
+    "description": "High-temperature refractory silicate ceramic with superior thermal stability, low thermal expansion, and resistance to creep at >1400 °C.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 2800.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2800.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 6.0,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 6.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 840.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 840.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 5.3e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 5.3e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 140000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 140000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 180000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.8,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.8,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 2123.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 2123.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "ptfe_teflon",
+    "name": "Polytetrafluoroethylene (PTFE / Teflon)",
+    "category": "polymer",
+    "composition": "-(CF2-CF2)n-",
+    "grade": "Virgin Extruded Grade",
+    "description": "Fluoropolymer with unmatched chemical resistance, extremely low coefficient of friction, high electrical resistivity, and broad working temperatures (-200 °C to 260 °C).",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 2160.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2160.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.25,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.25,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1050.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1050.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 0.000135,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 0.000135,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 500000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 500000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 23000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 23000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 30000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.85,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "original_value": 0.85,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 600.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 600.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "peek_unfilled",
+    "name": "Polyetheretherketone (PEEK - Unfilled)",
+    "category": "polymer",
+    "composition": "-(C6H4-O-C6H4-O-C6H4-CO)n-",
+    "grade": "Extruded Unfilled (PEEK 450G)",
+    "description": "High-performance semicrystalline engineering thermoplastic offering high mechanical stiffness, wear resistance, radiation stability, and low outgassing in vacuum.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 1300.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1300.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.25,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.25,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1340.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1340.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 4.7e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 4.7e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 3800000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 3800000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 100000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 100000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 100000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 616.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 616.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "polycarbonate_lexan",
+    "name": "Polycarbonate (PC / Lexan)",
+    "category": "polymer",
+    "composition": "Bisphenol A Polycarbonate",
+    "grade": "General Purpose Transparent",
+    "description": "Amorphous engineering thermoplastic known for high impact resistance, optical clarity, dimensional stability, and flame retardancy.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 1200.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1200.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.2,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.2,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1250.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1250.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 6.8e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 6.8e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 2380000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 2380000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 62000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 62000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 69000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 428.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Glass transition Tg = 145 °C",
+        "original_value": 428.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "nylon_6_6",
+    "name": "Nylon 6/6 (Polyamide PA66)",
+    "category": "polymer",
+    "composition": "[NH-(CH2)6-NH-CO-(CH2)4-CO]n",
+    "grade": "Extruded Unfilled (PA66)",
+    "description": "Versatile engineering plastic offering high tensile strength, stiffness, abrasion resistance, and good tribological properties for gears and bearings.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 1140.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1140.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.28,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.28,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1670.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1670.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 8e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 8e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 2900000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 2900000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 82000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 82000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 83000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 533.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 533.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "polyimide_kapton",
+    "name": "Polyimide Film (Kapton HN)",
+    "category": "polymer",
+    "composition": "Poly(4,4'-oxydiphenylene-pyromellitimide)",
+    "grade": "Kapton Type HN Film",
+    "description": "Aromatic polyimide space film possessing outstanding thermal stability (-269 °C to 400 °C), dielectric strength, and UV radiation endurance for MLI blankets.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 1420.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1420.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.12,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.12,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1090.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1090.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 2e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 2500000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 2500000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 69000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 69000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 231000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.86,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.86,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 673.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "No true melting point; decomposes > 520 °C",
+        "original_value": 673.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "uhmw_pe",
+    "name": "Ultra-High-Molecular-Weight Polyethylene (UHMW-PE)",
+    "category": "polymer",
+    "composition": "-(CH2-CH2)n- (MW 3–6 million g/mol)",
+    "grade": "Virgin Extruded",
+    "description": "Ultra-dense chain polyethylene with unmatched abrasion resistance, cryogenic impact resistance, self-lubrication, and zero moisture absorption.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 935.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 935.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.41,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.41,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1900.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1900.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 0.00015,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 0.00015,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 800000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 800000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 22000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 22000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 40000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 408.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 408.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "hdpe_polymer",
+    "name": "High-Density Polyethylene (HDPE)",
+    "category": "polymer",
+    "composition": "-(CH2-CH2)n-",
+    "grade": "Extrusion Grade",
+    "description": "Lightweight, highly flexible, chemical-resistant polymer with high hydrogen density, making it effective for space radiation shielding.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 955.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 955.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.44,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.44,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 2250.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 2250.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 0.00012,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 0.00012,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 1070000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 1070000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 26000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 26000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 31000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 404.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 404.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "polypropylene_pp",
+    "name": "Polypropylene (PP)",
+    "category": "polymer",
+    "composition": "-(CH2-CH(CH3))n-",
+    "grade": "Homopolymer",
+    "description": "Lightweight thermoplastic polymer with excellent chemical resistance, fatigue resistance ('living hinges'), and low density.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 905.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 905.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.17,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.17,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1900.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1900.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 0.0001,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 0.0001,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 1500000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 1500000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 35000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 35000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 37000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 438.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 438.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "pmma_acrylic",
+    "name": "Polymethyl Methacrylate (PMMA / Acrylic)",
+    "category": "polymer",
+    "composition": "-[CH2-C(CH3)(COOCH3)]n-",
+    "grade": "Cast Sheet Optical Grade",
+    "description": "Transparent thermoplastic with high optical transmission (92%), UV resistance, and moderate stiffness used in viewing ports and optical canopies.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 1190.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1190.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.19,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.19,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1460.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1460.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 7e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 7e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 3100000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 3100000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 72000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 433.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Glass transition Tg = 105 °C",
+        "original_value": 433.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "abs_plastic",
+    "name": "Acrylonitrile Butadiene Styrene (ABS)",
+    "category": "polymer",
+    "composition": "(C8H8)x·(C4H6)y·(C3H3N)z",
+    "grade": "Injection Molding / 3D Printing Grade",
+    "description": "Tough, rigid terpolymer commonly used in prototyping, consumer electronics casings, and additive manufacturing.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 1050.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1050.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.22,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.22,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1400.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1400.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 8.5e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 8.5e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 2200000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 2200000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 45000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 45000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 47000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 378.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Glass transition Tg = 105 °C",
+        "original_value": 378.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "cfrp_unidirectional_highmod",
+    "name": "Carbon Fiber Composite (CFRP - Unidirectional High-Modulus)",
+    "category": "composite",
+    "composition": "Toray M40J Carbon Fiber (60% Vf) / Epoxy Matrix",
+    "grade": "Unidirectional 0° High-Modulus Laminate",
+    "description": "Ultra-stiff lightweight aerospace composite providing extraordinary axial stiffness and near-zero axial thermal expansion for optical benches and satellite trusses.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 1580.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1580.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 45.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "condition": "0° longitudinal",
+        "original_value": 45.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 900.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 900.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": -4e-07,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "condition": "0° axial (negative CTE)",
+        "original_value": -4e-07,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 230000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "condition": "0° longitudinal",
+        "original_value": 230000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 2100000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "condition": "0° longitudinal",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.88,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "original_value": 0.88,
+        "original_unit": "dimensionless"
+      }
+    }
+  },
+  {
+    "id": "cfrp_quasi_isotropic",
+    "name": "Carbon Fiber Composite (CFRP - Quasi-Isotropic)",
+    "category": "composite",
+    "composition": "T300/T700 Carbon Fiber (55% Vf) / Epoxy [0/±45/90]s",
+    "grade": "Quasi-Isotropic Multi-Ply Laminate",
+    "description": "Balanced multi-directional carbon fiber composite delivering balanced planar stiffness, high specific strength, and vibration dampening for structural chassis.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 1550.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1550.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 5.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 5.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 920.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 920.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.5e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 2.5e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 55000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 55000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 580000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.85,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "original_value": 0.85,
+        "original_unit": "dimensionless"
+      }
+    }
+  },
+  {
+    "id": "gfrp_fiberglass_epoxy",
+    "name": "Glass Fiber Composite (GFRP / E-Glass Epoxy)",
+    "category": "composite",
+    "composition": "E-Glass Fiber (55% Vf) / Epoxy Matrix",
+    "grade": "Woven Fabric Composite (FR4 / G10 type)",
+    "description": "Electrically non-conductive, high-strength structural composite with excellent radiofrequency (RF) transparency for antenna radomes and fairings.",
+    "source_ids": [
+      "matweb",
+      "asm_handbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 1900.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1900.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.35,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.35,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1100.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1100.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.4e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.4e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 24000000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 24000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 280000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "original_value": 280000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 350000000.0,
+        "unit": "Pa",
+        "source_id": "asm_handbook",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.82,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "original_value": 0.82,
+        "original_unit": "dimensionless"
+      }
+    }
+  },
+  {
+    "id": "carbon_carbon_composite",
+    "name": "Carbon-Carbon Composite (C/C)",
+    "category": "composite",
+    "composition": "Carbon fibers in pyrolyzed carbon matrix",
+    "grade": "2D/3D Woven High-Density C/C",
+    "description": "Ultra-high-temperature structural composite retaining full strength at temperatures >2000 °C in inert or vacuum atmospheres, used in rocket nozzles and nose cones.",
+    "source_ids": [
+      "nasa_tpsx",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 1750.0,
+        "unit": "kg/m^3",
+        "source_id": "nasa_tpsx",
+        "original_value": 1750.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 50.0,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 50.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1200.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 1200.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.2e-06,
+        "unit": "1/K",
+        "source_id": "nasa_tpsx",
+        "original_value": 1.2e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 90000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 90000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 280000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.85,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.85,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 3800.0,
+        "unit": "K",
+        "source_id": "nasa_tpsx",
+        "notes": "Sublimes > 3500 °C",
+        "original_value": 3800.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "cmc_c_sic",
+    "name": "Ceramic Matrix Composite (C/SiC)",
+    "category": "composite",
+    "composition": "Carbon fibers embedded in Silicon Carbide matrix",
+    "grade": "Liquid Silicon Infiltration (LSI) Grade",
+    "description": "Damage-tolerant ceramic composite combining high thermal shock resistance and oxidation resistance for atmospheric re-entry heat shields and brake rotors.",
+    "source_ids": [
+      "nasa_tpsx",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 2400.0,
+        "unit": "kg/m^3",
+        "source_id": "nasa_tpsx",
+        "original_value": 2400.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 25.0,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 25.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 950.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 950.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.8e-06,
+        "unit": "1/K",
+        "source_id": "nasa_tpsx",
+        "original_value": 2.8e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 180000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 180000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 320000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.84,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.84,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 2700.0,
+        "unit": "K",
+        "source_id": "nasa_tpsx",
+        "original_value": 2700.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "borosilicate_glass_pyrex",
+    "name": "Borosilicate Glass (Pyrex / Borofloat 33)",
+    "category": "glass",
+    "composition": "81% SiO2, 13% B2O3, 4% Na2O/K2O, 2% Al2O3",
+    "grade": "Borofloat 33 Optical Quality",
+    "description": "Low-expansion optical and thermal glass with excellent thermal shock resistance and chemical durability for optical windows and vacuum sight ports.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 2230.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2230.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 1.2,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 1.2,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 830.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 830.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 3.25e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 3.25e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 64000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 64000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 70000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Bending strength",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.92,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "original_value": 0.92,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1093.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Softening point 820 °C",
+        "original_value": 1093.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "fused_silica_quartz",
+    "name": "Fused Silica (High Purity Synthetic Quartz Glass)",
+    "category": "glass",
+    "composition": "SiO2 >99.99%",
+    "grade": "Corning 7980 / Synthetic Fused Silica",
+    "description": "Non-crystalline amorphous silica with exceptionally low thermal expansion, high transmission from DUV to NIR, and extreme thermal shock tolerance.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 2200.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2200.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 1.38,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 1.38,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 740.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 740.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 5.2e-07,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 5.2e-07,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 72700000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 72700000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 55000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.88,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.88,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1986.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Softening point 1585 °C",
+        "original_value": 1986.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "soda_lime_glass",
+    "name": "Soda-Lime Float Glass",
+    "category": "glass",
+    "composition": "73% SiO2, 14% Na2O, 9% CaO, 4% MgO",
+    "grade": "Standard Float Sheet",
+    "description": "Prevalent window and substrate glass offering high planar smoothness, optical transparency, and low material cost.",
+    "source_ids": [
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 2500.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2500.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.96,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 0.96,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 850.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 850.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 9e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 9e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 70000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 70000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 45000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.94,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "original_value": 0.94,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1000.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "notes": "Softening point 720 °C",
+        "original_value": 1000.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "zerodur_glass_ceramic",
+    "name": "Zerodur Glass-Ceramic",
+    "category": "glass",
+    "composition": "Lithium aluminosilicate glass-ceramic (55% nanocrystalline quartz phase)",
+    "grade": "Class 0 Zero Expansion",
+    "description": "Zero-expansion glass-ceramic developed for space telescope primary mirrors (Hubble, JWST testbeds) with thermal expansion near zero over -50 °C to 100 °C.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 2530.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2530.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 1.46,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 1.46,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 820.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 820.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 5e-08,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "condition": "0 to 50 °C",
+        "original_value": 5e-08,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 90300000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 90300000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 90000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Bending strength",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.89,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.89,
+        "original_unit": "dimensionless"
+      }
+    }
+  },
+  {
+    "id": "macor_machinable_glass_ceramic",
+    "name": "Macor Machinable Glass-Ceramic",
+    "category": "glass",
+    "composition": "Fluorophlogopite mica in borosilicate glass matrix",
+    "grade": "Corning Macor Technical MGC",
+    "description": "Machinable glass-ceramic that can be turned, milled, and drilled with standard metalworking tooling, with zero porosity and ultra-high dielectric strength.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 2520.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2520.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 1.46,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 1.46,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 790.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 790.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 9.3e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 9.3e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 66900000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 66900000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 94000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Modulus of Rupture",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.88,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.88,
+        "original_unit": "dimensionless"
+      }
+    }
+  },
+  {
+    "id": "diamond_cvd",
+    "name": "Synthetic Diamond (CVD Polycrystalline)",
+    "category": "pure_substance",
+    "composition": "Carbon (C - sp3 Diamond Lattice)",
+    "grade": "Optical/Thermal Grade CVD Diamond",
+    "description": "Material with the highest thermal conductivity and hardness known, wide optical transparency, and chemical inertness for extreme laser optics and heat spreaders.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 3515.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 3515.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 2000.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "condition": "Room Temperature",
+        "original_value": 2000.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 515.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 515.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 1050000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 1050000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 1200000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 4300.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "notes": "Under high pressure; graphitizes > 1700 °C in vacuum",
+        "original_value": 4300.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "graphite_synthetic_isotropic",
+    "name": "Synthetic Graphite (Isotropic High-Density)",
+    "category": "pure_substance",
+    "composition": "Carbon (C - sp2 Layered Lattice)",
+    "grade": "Isostatically Pressed Fine Grain",
+    "description": "Self-lubricating, high-temperature thermal conductor that strengthens as temperature increases up to 2500 °C, used in rocket nozzles and nuclear moderators.",
+    "source_ids": [
+      "matweb",
+      "nasa_tpsx",
+      "nist_webbook"
+    ],
+    "properties": {
+      "density": {
+        "value": 1820.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 1820.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 130.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 130.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 710.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 710.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 4.5e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 4.5e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 11000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 11000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 38000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Tensile",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.85,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "original_value": 0.85,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 3890.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "notes": "Sublimes",
+        "original_value": 3890.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "silicon_single_crystal",
+    "name": "Silicon (Single Crystal Semiconductor Grade)",
+    "category": "pure_substance",
+    "composition": "Si 99.9999999%",
+    "grade": "Czochralski Monocrystalline <100>",
+    "description": "Elemental semiconductor forming the base of microelectronics, photovoltaic solar cells, and MEMS inertial sensors with extreme surface flatness.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 2329.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 2329.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 149.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 149.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 705.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 705.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.6e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 2.6e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 130000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "<100> direction",
+        "original_value": 130000000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 160000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1687.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 1687.0,
+        "original_unit": "K"
+      },
+      "boiling_point": {
+        "value": 3538.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 3538.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "pure_iron",
+    "name": "Pure Iron (Alpha Ferrite)",
+    "category": "pure_substance",
+    "composition": "Fe 99.99%",
+    "grade": "High Purity Electrolytic Iron",
+    "description": "Ferromagnetic elemental transition metal serving as the foundational constituent of carbon steels and superalloys.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 7874.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 7874.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 80.4,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 80.4,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 449.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 449.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.18e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.18e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 211000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 211000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 50000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Annealed",
+        "original_value": 50000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 190000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1811.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 1811.0,
+        "original_unit": "K"
+      },
+      "boiling_point": {
+        "value": 3134.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 3134.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "pure_nickel",
+    "name": "Pure Nickel (Nickel 200)",
+    "category": "pure_substance",
+    "composition": "Ni 99.6% min",
+    "grade": "Commercially Pure Wrought (Nickel 200)",
+    "description": "Commercially pure nickel offering superior resistance to caustic alkalis and acids, good magnetostrictive properties, and electrical conductivity.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 8890.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 8890.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 70.2,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 70.2,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 456.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 456.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.33e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.33e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 207000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 207000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 148000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Annealed",
+        "original_value": 148000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 462000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1728.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 1728.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "tps_shuttle_tile_li900",
+    "name": "Space Shuttle TPS Tile (LI-900 Silica Tile)",
+    "category": "ceramic",
+    "composition": "99.9% High Purity Amorphous Silica (SiO2) Fibers (94% volume void)",
+    "grade": "NASA Ames TPS LI-900",
+    "description": "Ultra-low-density sintered silica fiber thermal insulation tile developed by Lockheed and NASA Ames for the Space Shuttle orbiter re-entry heat shield.",
+    "source_ids": [
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 144.0,
+        "unit": "kg/m^3",
+        "source_id": "nasa_tpsx",
+        "original_value": 144.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.048,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "condition": "Vacuum / Room Temp",
+        "original_value": 0.048,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 628.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 628.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 5e-07,
+        "unit": "1/K",
+        "source_id": "nasa_tpsx",
+        "original_value": 5e-07,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 35000000.0,
+        "unit": "Pa",
+        "source_id": "nasa_tpsx",
+        "original_value": 35000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 170000.0,
+        "unit": "Pa",
+        "source_id": "nasa_tpsx",
+        "condition": "Through-thickness tensile",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.88,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "condition": "With RCG black borosilicate coating",
+        "original_value": 0.88,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1923.0,
+        "unit": "K",
+        "source_id": "nasa_tpsx",
+        "notes": "Re-usable up to 1260 °C continuous",
+        "original_value": 1923.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "tps_pica_phenolic_carbon",
+    "name": "Phenolic-Impregnated Carbon Ablator (PICA)",
+    "category": "composite",
+    "composition": "Carbon Fiber Preform infused with Phenolic Resin",
+    "grade": "NASA Ames PICA (Stardust / Mars 2020 / Dragon Heat Shield)",
+    "description": "Lightweight carbon-phenolic ablative thermal protection system developed by NASA Ames for hyperbolic planetary entry missions and Crew Dragon heat shields.",
+    "source_ids": [
+      "nasa_tpsx"
+    ],
+    "properties": {
+      "density": {
+        "value": 270.0,
+        "unit": "kg/m^3",
+        "source_id": "nasa_tpsx",
+        "original_value": 270.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.075,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "condition": "Virgin state, room temp",
+        "original_value": 0.075,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1250.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nasa_tpsx",
+        "original_value": 1250.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2.2e-06,
+        "unit": "1/K",
+        "source_id": "nasa_tpsx",
+        "original_value": 2.2e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 350000000.0,
+        "unit": "Pa",
+        "source_id": "nasa_tpsx",
+        "original_value": 350000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 1200000.0,
+        "unit": "Pa",
+        "source_id": "nasa_tpsx",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.9,
+        "unit": "dimensionless",
+        "source_id": "nasa_tpsx",
+        "condition": "Char state",
+        "original_value": 0.9,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 3100.0,
+        "unit": "K",
+        "source_id": "nasa_tpsx",
+        "notes": "Ablates endothermically > 1800 °C",
+        "original_value": 3100.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "aerogel_silica",
+    "name": "Silica Aerogel (Hydrophobic Nanoporous)",
+    "category": "ceramic",
+    "composition": "Nanostructured SiO2 network (99.8% air)",
+    "grade": "Cryogenic / Space Insulation Grade",
+    "description": "Lowest density solid material with lowest thermal conductivity, used for Mars rover electronics bay insulation and Stardust cosmic dust capture.",
+    "source_ids": [
+      "nasa_tpsx",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 100.0,
+        "unit": "kg/m^3",
+        "source_id": "nasa_tpsx",
+        "original_value": 100.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 0.015,
+        "unit": "W/(m*K)",
+        "source_id": "nasa_tpsx",
+        "condition": "Ambient pressure (0.005 in vacuum)",
+        "original_value": 0.015,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 1000.0,
+        "unit": "J/(kg*K)",
+        "source_id": "matweb",
+        "original_value": 1000.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 2e-06,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 2e-06,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 5000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 5000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 30000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "melting_point": {
+        "value": 1473.0,
+        "unit": "K",
+        "source_id": "matweb",
+        "original_value": 1473.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "gold_pure",
+    "name": "Pure Gold (Au 99.99%)",
+    "category": "pure_substance",
+    "composition": "Au >99.99%",
+    "grade": "High Purity Vacuum Deposition Grade",
+    "description": "Noble metal with exceptional infrared reflectivity, high thermal/electrical conductivity, and total oxidation immunity for satellite thermal mirrors and foil coatings.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 19300.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 19300.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 318.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 318.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 129.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 129.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.42e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.42e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 78000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 78000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 30000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Annealed",
+        "original_value": 30000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 120000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.03,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "condition": "Polished / Vapor deposited (High IR Reflectance)",
+        "original_value": 0.03,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1337.3,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 1337.3,
+        "original_unit": "K"
+      },
+      "boiling_point": {
+        "value": 3129.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 3129.0,
+        "original_unit": "K"
+      }
+    }
+  },
+  {
+    "id": "silver_pure",
+    "name": "Pure Silver (Ag 99.99%)",
+    "category": "pure_substance",
+    "composition": "Ag >99.99%",
+    "grade": "High Purity Fine Silver",
+    "description": "Highest electrical and thermal conductivity of all known elemental metals, with highest visible light reflectance.",
+    "source_ids": [
+      "nist_webbook",
+      "matweb"
+    ],
+    "properties": {
+      "density": {
+        "value": 10490.0,
+        "unit": "kg/m^3",
+        "source_id": "matweb",
+        "original_value": 10490.0,
+        "original_unit": "kg/m^3"
+      },
+      "thermal_conductivity": {
+        "value": 429.0,
+        "unit": "W/(m*K)",
+        "source_id": "matweb",
+        "original_value": 429.0,
+        "original_unit": "W/(m*K)"
+      },
+      "specific_heat": {
+        "value": 235.0,
+        "unit": "J/(kg*K)",
+        "source_id": "nist_webbook",
+        "original_value": 235.0,
+        "original_unit": "J/(kg*K)"
+      },
+      "thermal_expansion": {
+        "value": 1.89e-05,
+        "unit": "1/K",
+        "source_id": "matweb",
+        "original_value": 1.89e-05,
+        "original_unit": "1/K"
+      },
+      "youngs_modulus": {
+        "value": 83000000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 83000000000.0,
+        "original_unit": "Pa"
+      },
+      "yield_strength": {
+        "value": 54000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "original_value": 54000000.0,
+        "original_unit": "Pa"
+      },
+      "tensile_strength": {
+        "value": 140000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "normalization_warning": "Could not normalize Pa"
+      },
+      "emissivity": {
+        "value": 0.02,
+        "unit": "dimensionless",
+        "source_id": "matweb",
+        "condition": "Polished (High Reflectance)",
+        "original_value": 0.02,
+        "original_unit": "dimensionless"
+      },
+      "melting_point": {
+        "value": 1234.9,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 1234.9,
+        "original_unit": "K"
+      },
+      "boiling_point": {
+        "value": 2435.0,
+        "unit": "K",
+        "source_id": "nist_webbook",
+        "original_value": 2435.0,
+        "original_unit": "K"
+      }
+    }
+  }
+]

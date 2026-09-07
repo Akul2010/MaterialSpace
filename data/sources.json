@@ -1,0 +1,34 @@
+{
+  "nasa_tpsx": {
+    "source_id": "nasa_tpsx",
+    "organization": "NASA Ames Research Center",
+    "title": "Thermal Protection Systems Expert (TPSX) Materials Database",
+    "url": "https://tpsx.arc.nasa.gov",
+    "accessed": "2026-09-06",
+    "notes": "Official NASA aerospace and thermal protection materials thermophysical property database."
+  },
+  "nist_webbook": {
+    "source_id": "nist_webbook",
+    "organization": "National Institute of Standards and Technology (NIST)",
+    "title": "NIST Chemistry WebBook (SRD 69)",
+    "url": "https://webbook.nist.gov/chemistry/",
+    "accessed": "2026-09-06",
+    "notes": "Standard Reference Data for thermophysical properties of pure substances and elements."
+  },
+  "matweb": {
+    "source_id": "matweb",
+    "organization": "MatWeb LLC",
+    "title": "MatWeb Online Materials Information Resource",
+    "url": "https://www.matweb.com/",
+    "accessed": "2026-09-06",
+    "notes": "Commercial engineering materials property database conforming to published manufacturer specifications."
+  },
+  "asm_handbook": {
+    "source_id": "asm_handbook",
+    "organization": "ASM International",
+    "title": "ASM Handbook Series (Vols 1, 2, 21 - Properties and Selection: Nonferrous Alloys and Special-Purpose Materials, Composites)",
+    "url": "https://www.asminternational.org",
+    "accessed": "2026-09-06",
+    "notes": "Peer-reviewed authoritative handbook series on materials engineering and mechanical properties."
+  }
+}
