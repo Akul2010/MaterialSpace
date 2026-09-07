@@ -6,28 +6,24 @@ Allows side-by-side tabular comparison of 2–4 materials with comparative bar c
 
 from __future__ import annotations
 
-from typing import List, Optional
 import numpy as np
+
+from app.core.units import format_property_value
+from app.data.database import MaterialDatabase
 from app.ui.qt import (
     QComboBox,
     QFrame,
-    QGridLayout,
     QHBoxLayout,
     QHeaderView,
     QLabel,
-    QPushButton,
     QScrollArea,
+    Qt,
     QTableWidget,
     QTableWidgetItem,
     QVBoxLayout,
     QWidget,
-    Qt,
     Signal,
 )
-from app.core.constants import PROPERTY_METADATA
-from app.core.material import Material
-from app.core.units import format_property_value
-from app.data.database import MaterialDatabase
 from app.ui.widgets import MplCanvas
 
 
@@ -41,7 +37,7 @@ class ComparisonView(QWidget):
     def __init__(self, database: MaterialDatabase, parent=None):
         super().__init__(parent)
         self.db = database
-        self.selected_material_ids: List[str] = [
+        self.selected_material_ids: list[str] = [
             "aluminum_6061_t6",
             "titanium_ti6al4v_grade5",
             "cfrp_unidirectional_highmod",
@@ -80,7 +76,7 @@ class ComparisonView(QWidget):
         sel_title.setStyleSheet("color: #58a6ff; font-weight: 700; font-size: 11px;")
         sel_layout.addWidget(sel_title)
 
-        self.combos: List[QComboBox] = []
+        self.combos: list[QComboBox] = []
         all_materials = self.db.get_all_materials()
 
         for slot in range(4):

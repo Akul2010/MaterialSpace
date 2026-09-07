@@ -5,7 +5,7 @@ MaterialSpace core material data model.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Optional
+from typing import Any
 
 
 @dataclass
@@ -17,13 +17,13 @@ class MaterialProperty:
     value: float
     unit: str
     source_id: str
-    uncertainty: Optional[float] = None
-    temperature: Optional[float] = None  # Reference temperature in Kelvin
-    temperature_unit: Optional[str] = None
-    condition: Optional[str] = None  # e.g., "T6 temper", "annealed", "room temp"
-    original_value: Optional[float | str] = None
-    original_unit: Optional[str] = None
-    notes: Optional[str] = None
+    uncertainty: float | None = None
+    temperature: float | None = None  # Reference temperature in Kelvin
+    temperature_unit: str | None = None
+    condition: str | None = None  # e.g., "T6 temper", "annealed", "room temp"
+    original_value: float | str | None = None
+    original_unit: str | None = None
+    notes: str | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> MaterialProperty:
@@ -72,18 +72,18 @@ class Material:
     id: str
     name: str
     category: str
-    composition: Optional[str] = None
-    grade: Optional[str] = None
+    composition: str | None = None
+    grade: str | None = None
     properties: dict[str, MaterialProperty] = field(default_factory=dict)
     source_ids: list[str] = field(default_factory=list)
-    notes: Optional[str] = None
-    description: Optional[str] = None
+    notes: str | None = None
+    description: str | None = None
 
-    def get_property(self, name: str) -> Optional[MaterialProperty]:
+    def get_property(self, name: str) -> MaterialProperty | None:
         """Retrieve a MaterialProperty by key, or None if unavailable."""
         return self.properties.get(name)
 
-    def get_value(self, name: str) -> Optional[float]:
+    def get_value(self, name: str) -> float | None:
         """Retrieve the float value of a property, or None if unavailable."""
         prop = self.get_property(name)
         return prop.value if prop is not None else None

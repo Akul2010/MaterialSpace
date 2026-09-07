@@ -19,8 +19,6 @@ Internally, all physics calculations use standard SI units:
 
 from __future__ import annotations
 
-from typing import Union
-
 # ============================================================
 # TEMPERATURE CONVERSIONS (Base: Kelvin K)
 # ============================================================
@@ -369,7 +367,7 @@ def convert_energy(value: float, from_unit: str, to_unit: str) -> float:
 
 def format_property_value(
     prop_name: str,
-    value: Union[float, int, None],
+    value: float | None,
     display_unit: str | None = None,
     sig_figs: int = 4,
 ) -> str:

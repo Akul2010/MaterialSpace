@@ -21,7 +21,7 @@ Where:
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Tuple
+
 import numpy as np
 
 
@@ -82,7 +82,7 @@ def generate_temperature_profile(
     t_cold: float,
     thickness: float,
     points: int = 100,
-) -> Tuple[np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray]:
     """
     Generate (positions_x_m, temperatures_K) linear steady-state profile.
     """

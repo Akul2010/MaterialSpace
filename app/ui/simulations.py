@@ -10,30 +10,28 @@ Houses 4 interactive physics laboratory experiments:
 
 from __future__ import annotations
 
-from typing import Optional
 import numpy as np
+
+import app.models.heat_capacity as hcap_model
+import app.models.heat_conduction as hc_model
+import app.models.stress_strain as ss_model
+import app.models.thermal_expansion as te_model
+
+from app.data.database import MaterialDatabase
 from app.ui.qt import (
     QComboBox,
     QDoubleSpinBox,
     QFrame,
-    QGridLayout,
     QHBoxLayout,
     QLabel,
     QScrollArea,
     QSlider,
-    QSpinBox,
-    QSplitter,
+    Qt,
     QTabWidget,
     QVBoxLayout,
     QWidget,
-    Qt,
 )
-from app.core.material import Material
-from app.data.database import MaterialDatabase
-import app.models.thermal_expansion as te_model
-import app.models.heat_conduction as hc_model
-import app.models.stress_strain as ss_model
-import app.models.heat_capacity as hcap_model
+
 from app.ui.widgets import EducationalExplanationCard, MplCanvas, StatBadge
 
 

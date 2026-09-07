@@ -3,6 +3,7 @@ Tests for Heat Conduction Physics Model.
 """
 
 import pytest
+
 from app.models.heat_conduction import (
     calculate_conduction,
     generate_temperature_profile,

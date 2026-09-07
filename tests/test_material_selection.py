@@ -4,9 +4,9 @@ Tests for Material Selection Decision Engine.
 
 from app.data.database import MaterialDatabase
 from app.models.material_selection import (
+    BUILTIN_CHALLENGES,
     Criterion,
     evaluate_materials,
-    BUILTIN_CHALLENGES,
 )
 
 

@@ -6,7 +6,6 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Optional
 
 
 class SourceCatalog:
@@ -26,7 +25,7 @@ class SourceCatalog:
             data = json.load(f)
         return cls(data)
 
-    def get_source(self, source_id: str) -> Optional[dict]:
+    def get_source(self, source_id: str) -> dict | None:
         return self._sources.get(source_id)
 
     def get_citation_text(self, source_id: str) -> str:

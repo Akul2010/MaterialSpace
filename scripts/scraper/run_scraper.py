@@ -4,11 +4,9 @@ import argparse
 from pathlib import Path
 
 from common import configure_logging, save_json
-
+from matweb import MatWebImporter
 from nasa_tpsx import NASATPSXScraper
 from nist import NISTScraper
-from matweb import MatWebImporter
-
 
 ROOT = Path(__file__).resolve().parents[2]
 

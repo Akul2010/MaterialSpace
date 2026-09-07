@@ -10,7 +10,7 @@ No black-box machine learning. 100% auditable and explainable.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional
+
 from app.core.material import Material
 
 
@@ -24,8 +24,8 @@ class Criterion:
     label: str
     weight: float  # Relative weight (0.0 to 1.0)
     higher_is_better: bool = True  # True for strength/modulus/conductivity, False for density/thermal_expansion
-    min_threshold: Optional[float] = None  # Hard minimum constraint
-    max_threshold: Optional[float] = None  # Hard maximum constraint
+    min_threshold: float | None = None  # Hard minimum constraint
+    max_threshold: float | None = None  # Hard maximum constraint
     description: str = ""
 
 
@@ -33,7 +33,7 @@ class Criterion:
 class PropertyScoreBreakdown:
     property_name: str
     label: str
-    raw_value: Optional[float]
+    raw_value: float | None
     unit: str
     normalized_score: float  # 0.0 to 100.0
     weight: float  # Fraction (e.g. 0.30)
@@ -49,8 +49,8 @@ class CandidateEvaluation:
     overall_score: float  # 0.0 to 100.0
     rank: int = 0
     passed_hard_constraints: bool = True
-    failure_reasons: List[str] = field(default_factory=list)
-    breakdowns: Dict[str, PropertyScoreBreakdown] = field(default_factory=dict)
+    failure_reasons: list[str] = field(default_factory=list)
+    breakdowns: dict[str, PropertyScoreBreakdown] = field(default_factory=dict)
     summary_explanation: str = ""
 
 
@@ -60,15 +60,15 @@ class EngineeringChallenge:
     title: str
     description: str
     engineering_context: str
-    default_criteria: List[Criterion]
-    recommended_candidate_ids: List[str]
+    default_criteria: list[Criterion]
+    recommended_candidate_ids: list[str]
     notes_and_tradeoffs: str
 
 
 def evaluate_materials(
-    materials: List[Material],
-    criteria: List[Criterion],
-) -> List[CandidateEvaluation]:
+    materials: list[Material],
+    criteria: list[Criterion],
+) -> list[CandidateEvaluation]:
     """
     Evaluate and rank a list of candidate materials against weighted criteria.
     """
@@ -85,7 +85,7 @@ def evaluate_materials(
     ]
 
     # Find min and max for each criterion across available values in the pool
-    prop_ranges: Dict[str, tuple[float, float]] = {}
+    prop_ranges: dict[str, tuple[float, float]] = {}
     for crit in criteria:
         vals = [
             m.get_value(crit.property_name)
@@ -99,12 +99,12 @@ def evaluate_materials(
         else:
             prop_ranges[crit.property_name] = (0.0, 1.0)
 
-    evaluations: List[CandidateEvaluation] = []
+    evaluations: list[CandidateEvaluation] = []
 
     for mat in materials:
-        breakdowns: Dict[str, PropertyScoreBreakdown] = {}
+        breakdowns: dict[str, PropertyScoreBreakdown] = {}
         passed_constraints = True
-        failures: List[str] = []
+        failures: list[str] = []
         overall = 0.0
 
         for crit, w in zip(criteria, norm_weights):
@@ -201,7 +201,7 @@ def evaluate_materials(
 # PREDEFINED CHALLENGES
 # ============================================================
 
-BUILTIN_CHALLENGES: List[EngineeringChallenge] = [
+BUILTIN_CHALLENGES: list[EngineeringChallenge] = [
     EngineeringChallenge(
         id="lunar_rover_chassis",
         title="Lunar Rover Structural Chassis",

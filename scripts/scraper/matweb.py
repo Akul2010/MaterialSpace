@@ -6,7 +6,6 @@ from pathlib import Path
 
 from common import MaterialRecord, PropertyValue, SourceReference, parse_float, slugify
 
-
 logger = logging.getLogger(__name__)
 
 

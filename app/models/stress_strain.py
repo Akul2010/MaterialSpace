@@ -22,7 +22,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Optional, Tuple
+
 import numpy as np
 
 
@@ -41,13 +41,13 @@ class StressStrainResult:
     area: float  # m^2
     youngs_modulus: float  # Pa
     initial_length: float  # m
-    yield_strength: Optional[float]  # Pa
+    yield_strength: float | None  # Pa
     stress: float  # Pa
     strain: float  # dimensionless
     deformation: float  # m
     final_length: float  # m
-    yield_ratio: Optional[float]  # stress / yield_strength
-    factor_of_safety: Optional[float]  # yield_strength / stress
+    yield_ratio: float | None  # stress / yield_strength
+    factor_of_safety: float | None  # yield_strength / stress
     yield_status: YieldStatus
     status_message: str
 
@@ -57,7 +57,7 @@ def calculate_stress_strain(
     area: float,
     youngs_modulus: float,
     initial_length: float = 1.0,
-    yield_strength: Optional[float] = None,
+    yield_strength: float | None = None,
 ) -> StressStrainResult:
     """
     Calculate uniaxial engineering stress, strain, deformation, and yield status.
@@ -75,8 +75,8 @@ def calculate_stress_strain(
     deformation = strain * initial_length
     final_l = initial_length + deformation
 
-    yield_ratio: Optional[float] = None
-    fos: Optional[float] = None
+    yield_ratio: float | None = None
+    fos: float | None = None
     status: YieldStatus
     message: str
 
@@ -125,10 +125,10 @@ def calculate_stress_strain(
 
 def generate_stress_strain_curve(
     youngs_modulus: float,
-    yield_strength: Optional[float],
+    yield_strength: float | None,
     max_strain: float = 0.02,
     points: int = 100,
-) -> Tuple[np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray]:
     """
     Generate (strain_array, stress_Pa_array) for visual graphing.
     """

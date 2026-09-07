@@ -2,12 +2,10 @@ from __future__ import annotations
 
 import logging
 import re
-from urllib.parse import quote, urlencode
+from urllib.parse import quote
 
 import requests
-
 from bs4 import BeautifulSoup
-
 from common import (
     MaterialRecord,
     PropertyValue,
@@ -16,7 +14,6 @@ from common import (
     parse_float,
     slugify,
 )
-
 
 logger = logging.getLogger(__name__)
 

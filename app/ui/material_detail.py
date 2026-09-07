@@ -4,7 +4,10 @@ Material Detail View for MaterialSpace.
 
 from __future__ import annotations
 
-from typing import Optional
+from app.core.constants import PROPERTY_METADATA
+from app.core.material import Material
+from app.core.units import format_property_value
+from app.data.database import MaterialDatabase
 from app.ui.qt import (
     QFrame,
     QGridLayout,
@@ -14,13 +17,8 @@ from app.ui.qt import (
     QScrollArea,
     QVBoxLayout,
     QWidget,
-    Qt,
     Signal,
 )
-from app.core.constants import PROPERTY_METADATA
-from app.core.material import Material
-from app.core.units import format_property_value
-from app.data.database import MaterialDatabase
 from app.ui.widgets import PropertyCard
 
 
@@ -36,7 +34,7 @@ class MaterialDetailView(QWidget):
     def __init__(self, database: MaterialDatabase, parent=None):
         super().__init__(parent)
         self.db = database
-        self.current_material: Optional[Material] = None
+        self.current_material: Material | None = None
         self._init_ui()
 
     def _init_ui(self):

@@ -1,12 +1,9 @@
 from __future__ import annotations
 
 import logging
-import re
 
 import requests
-
 from bs4 import BeautifulSoup
-
 from common import (
     MaterialRecord,
     PropertyValue,
@@ -16,7 +13,6 @@ from common import (
     parse_float,
     slugify,
 )
-
 
 logger = logging.getLogger(__name__)
 

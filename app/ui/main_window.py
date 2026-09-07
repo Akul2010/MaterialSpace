@@ -4,7 +4,12 @@ MaterialSpace Desktop Main Window.
 
 from __future__ import annotations
 
-from typing import Optional
+from app.data.database import MaterialDatabase
+from app.ui.challenges import ChallengesView
+from app.ui.comparison import ComparisonView
+from app.ui.home_view import HomeView
+from app.ui.material_detail import MaterialDetailView
+from app.ui.material_explorer import MaterialExplorerView
 from app.ui.qt import (
     QButtonGroup,
     QFrame,
@@ -15,15 +20,7 @@ from app.ui.qt import (
     QStackedWidget,
     QVBoxLayout,
     QWidget,
-    Qt,
-    QIcon,
 )
-from app.data.database import MaterialDatabase
-from app.ui.challenges import ChallengesView
-from app.ui.comparison import ComparisonView
-from app.ui.home_view import HomeView
-from app.ui.material_detail import MaterialDetailView
-from app.ui.material_explorer import MaterialExplorerView
 from app.ui.simulations import SimulationsView
 from app.ui.theme import STYLESHEET
 
@@ -33,7 +30,7 @@ class MainWindow(QMainWindow):
     Main application window managing top navigation and view switching.
     """
 
-    def __init__(self, database: Optional[MaterialDatabase] = None):
+    def __init__(self, database: MaterialDatabase | None = None):
         super().__init__()
         self.db = database or MaterialDatabase.default()
         self.setWindowTitle("MaterialSpace — Interactive Materials-Engineering Sandbox")

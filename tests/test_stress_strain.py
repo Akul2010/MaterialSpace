@@ -3,10 +3,11 @@ Tests for Stress and Strain Physics Model.
 """
 
 import pytest
+
 from app.models.stress_strain import (
+    YieldStatus,
     calculate_stress_strain,
     generate_stress_strain_curve,
-    YieldStatus,
 )
 
 

@@ -4,7 +4,9 @@ Material Explorer View for MaterialSpace.
 
 from __future__ import annotations
 
-from typing import Optional
+from app.core.material import Material
+from app.core.units import format_property_value
+from app.data.database import MaterialDatabase
 from app.ui.qt import (
     QButtonGroup,
     QFrame,
@@ -14,16 +16,13 @@ from app.ui.qt import (
     QLineEdit,
     QPushButton,
     QSplitter,
+    Qt,
     QTableWidget,
     QTableWidgetItem,
     QVBoxLayout,
     QWidget,
-    Qt,
     Signal,
 )
-from app.core.material import Material
-from app.core.units import format_property_value
-from app.data.database import MaterialDatabase
 
 
 class MaterialExplorerView(QWidget):
@@ -39,7 +38,7 @@ class MaterialExplorerView(QWidget):
         super().__init__(parent)
         self.db = database
         self.current_category = "all"
-        self.selected_material: Optional[Material] = None
+        self.selected_material: Material | None = None
         self._init_ui()
         self._populate_table()
 

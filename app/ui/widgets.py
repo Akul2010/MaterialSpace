@@ -4,20 +4,16 @@ Reusable custom widgets for MaterialSpace desktop interface.
 
 from __future__ import annotations
 
-from typing import Optional
+import matplotlib
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
+from matplotlib.figure import Figure
+
 from app.ui.qt import (
     QFrame,
     QHBoxLayout,
     QLabel,
-    QPushButton,
     QVBoxLayout,
-    QWidget,
-    Qt,
-    Signal,
 )
-import matplotlib
-from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
-from matplotlib.figure import Figure
 from app.ui.theme import MATPLOTLIB_DARK_STYLE
 
 
@@ -46,13 +42,13 @@ class StatBadge(QFrame):
     ):
         super().__init__(parent)
         self.setObjectName("stat_badge")
-        self.setStyleSheet(f"""
-            QFrame#stat_badge {{
+        self.setStyleSheet("""
+            QFrame#stat_badge {
                 background-color: #161b22;
                 border: 1px solid #30363d;
                 border-radius: 8px;
                 padding: 12px;
-            }}
+            }
         """)
         layout = QVBoxLayout(self)
         layout.setContentsMargins(12, 10, 12, 10)
@@ -84,8 +80,8 @@ class PropertyCard(QFrame):
         prop_label: str,
         value_str: str,
         unit_str: str = "",
-        condition: Optional[str] = None,
-        source_citation: Optional[str] = None,
+        condition: str | None = None,
+        source_citation: str | None = None,
         is_available: bool = True,
         parent=None,
     ):

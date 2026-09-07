@@ -4,7 +4,14 @@ Engineering Challenges & Material Selection Decision Engine View for MaterialSpa
 
 from __future__ import annotations
 
-from typing import Dict, List, Optional
+from app.data.database import MaterialDatabase
+from app.models.material_selection import (
+    BUILTIN_CHALLENGES,
+    CandidateEvaluation,
+    Criterion,
+    EngineeringChallenge,
+    evaluate_materials,
+)
 from app.ui.qt import (
     QCheckBox,
     QComboBox,
@@ -16,21 +23,11 @@ from app.ui.qt import (
     QPushButton,
     QScrollArea,
     QSlider,
+    Qt,
     QVBoxLayout,
     QWidget,
-    Qt,
     Signal,
 )
-from app.core.material import Material
-from app.data.database import MaterialDatabase
-from app.models.material_selection import (
-    BUILTIN_CHALLENGES,
-    CandidateEvaluation,
-    Criterion,
-    EngineeringChallenge,
-    evaluate_materials,
-)
-from app.ui.widgets import MplCanvas
 
 
 class ChallengesView(QWidget):
@@ -44,7 +41,7 @@ class ChallengesView(QWidget):
         super().__init__(parent)
         self.db = database
         self.current_challenge: EngineeringChallenge = BUILTIN_CHALLENGES[0]
-        self.active_criteria: List[Criterion] = [
+        self.active_criteria: list[Criterion] = [
             Criterion(
                 c.property_name,
                 c.label,
@@ -56,12 +53,12 @@ class ChallengesView(QWidget):
             )
             for c in self.current_challenge.default_criteria
         ]
-        self.active_candidate_ids: List[str] = list(
+        self.active_candidate_ids: list[str] = list(
             self.current_challenge.recommended_candidate_ids
         )
-        self.sliders: Dict[str, QSlider] = {}
-        self.slider_labels: Dict[str, QLabel] = {}
-        self.candidate_checks: Dict[str, QCheckBox] = {}
+        self.sliders: dict[str, QSlider] = {}
+        self.slider_labels: dict[str, QLabel] = {}
+        self.candidate_checks: dict[str, QCheckBox] = {}
         self._init_ui()
         self._recalculate_rankings()
 

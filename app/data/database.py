@@ -6,7 +6,6 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Optional
 
 from app.core.material import Material
 from app.data.sources import SourceCatalog
@@ -18,7 +17,7 @@ class MaterialDatabase:
     """
 
     def __init__(
-        self, materials: list[Material], source_catalog: Optional[SourceCatalog] = None
+        self, materials: list[Material], source_catalog: SourceCatalog | None = None
     ):
         self._materials = materials
         self._by_id: dict[str, Material] = {m.id: m for m in materials}
@@ -28,7 +27,7 @@ class MaterialDatabase:
     def load_from_json(
         cls,
         materials_path: Path | str,
-        sources_path: Optional[Path | str] = None,
+        sources_path: Path | str | None = None,
     ) -> MaterialDatabase:
         m_path = Path(materials_path)
         if not m_path.exists():
@@ -71,7 +70,7 @@ class MaterialDatabase:
     def count(self) -> int:
         return len(self._materials)
 
-    def get_material(self, material_id: str) -> Optional[Material]:
+    def get_material(self, material_id: str) -> Material | None:
         """Lookup a material by exact ID."""
         return self._by_id.get(material_id)
 

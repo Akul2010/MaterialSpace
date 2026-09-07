@@ -3,6 +3,7 @@ Tests for Heat Capacity Physics Model.
 """
 
 import pytest
+
 from app.models.heat_capacity import calculate_heat_energy, generate_energy_curve
 
 

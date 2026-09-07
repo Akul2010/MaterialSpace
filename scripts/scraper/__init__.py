@@ -8,17 +8,16 @@ from .common import (
     SourceReference,
     slugify,
 )
-
+from .matweb import MatWebImporter
 from .nasa_tpsx import NASATPSXScraper
 from .nist import NISTScraper
-from .matweb import MatWebImporter
 
 __all__ = [
+    "MatWebImporter",
     "MaterialRecord",
+    "NASATPSXScraper",
+    "NISTScraper",
     "PropertyValue",
     "SourceReference",
     "slugify",
-    "NASATPSXScraper",
-    "NISTScraper",
-    "MatWebImporter",
 ]

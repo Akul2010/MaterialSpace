@@ -5,8 +5,6 @@ Supports QtPy, PyQt5, and PySide6 transparently.
 
 from __future__ import annotations
 
-import os
-
 # Prefer PyQt5 if PySide6 DLLs are conflicted in the current environment
 try:
     from qtpy import QtCore, QtGui, QtWidgets
@@ -71,7 +69,9 @@ except ImportError:
         )
     except ImportError:
         from PyQt5 import QtCore, QtGui, QtWidgets
-        from PyQt5.QtCore import Qt, pyqtSignal as Signal, pyqtSlot as Slot
+        from PyQt5.QtCore import Qt
+        from PyQt5.QtCore import pyqtSignal as Signal
+        from PyQt5.QtCore import pyqtSlot as Slot
         from PyQt5.QtGui import QFont, QIcon
         from PyQt5.QtWidgets import (
             QApplication,
@@ -101,23 +101,17 @@ except ImportError:
         )
 
 __all__ = [
-    "QtCore",
-    "QtGui",
-    "QtWidgets",
-    "Qt",
-    "Signal",
-    "Slot",
-    "QFont",
-    "QIcon",
     "QApplication",
     "QButtonGroup",
     "QCheckBox",
     "QComboBox",
     "QDoubleSpinBox",
+    "QFont",
     "QFrame",
     "QGridLayout",
     "QHBoxLayout",
     "QHeaderView",
+    "QIcon",
     "QLabel",
     "QLineEdit",
     "QMainWindow",
@@ -128,9 +122,15 @@ __all__ = [
     "QSpinBox",
     "QSplitter",
     "QStackedWidget",
+    "QTabWidget",
     "QTableWidget",
     "QTableWidgetItem",
-    "QTabWidget",
     "QVBoxLayout",
     "QWidget",
+    "Qt",
+    "QtCore",
+    "QtGui",
+    "QtWidgets",
+    "Signal",
+    "Slot",
 ]

@@ -4,7 +4,6 @@ import argparse
 import json
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_FIELDS = {
@@ -60,7 +59,6 @@ PROPERTY_RULES = {
     },
     "thermal_expansion": {
         "unit": {
-            "1/K",
             "1/K",
             "um/(m*K)",
             "µm/(m*K)",

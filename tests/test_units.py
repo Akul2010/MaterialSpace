@@ -2,19 +2,15 @@
 Tests for centralized unit conversion and formatting.
 """
 
-import pytest
 from app.core.units import (
-    convert_temperature,
-    convert_length,
-    convert_area,
-    convert_mass,
-    convert_force,
-    convert_pressure,
     convert_density,
-    convert_thermal_conductivity,
-    convert_specific_heat,
-    convert_thermal_expansion,
     convert_energy,
+    convert_length,
+    convert_pressure,
+    convert_specific_heat,
+    convert_temperature,
+    convert_thermal_conductivity,
+    convert_thermal_expansion,
     format_property_value,
 )
 

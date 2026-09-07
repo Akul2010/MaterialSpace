@@ -1,7 +1,8 @@
 import pytest
-from app.ui.qt import QApplication
+
 from app.data.database import MaterialDatabase
 from app.ui.main_window import MainWindow
+from app.ui.qt import QApplication
 
 
 @pytest.fixture(scope="session")

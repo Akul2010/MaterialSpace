@@ -3,6 +3,7 @@ Tests for Thermal Expansion Physics Model.
 """
 
 import pytest
+
 from app.models.thermal_expansion import calculate_expansion, generate_temperature_curve
 
 

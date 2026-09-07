@@ -12,10 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app.ui.qt import QApplication, QFont, Qt
-
 from app.data.database import MaterialDatabase
 from app.ui.main_window import MainWindow
+from app.ui.qt import QApplication, QFont
 
 
 def main() -> int:

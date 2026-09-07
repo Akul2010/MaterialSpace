@@ -4,6 +4,7 @@ MaterialSpace Home Dashboard View.
 
 from __future__ import annotations
 
+from app.data.database import MaterialDatabase
 from app.ui.qt import (
     QFrame,
     QGridLayout,
@@ -13,10 +14,8 @@ from app.ui.qt import (
     QScrollArea,
     QVBoxLayout,
     QWidget,
-    Qt,
     Signal,
 )
-from app.data.database import MaterialDatabase
 from app.ui.widgets import StatBadge
 
 

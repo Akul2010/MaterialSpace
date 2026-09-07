@@ -1,14 +1,12 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from datetime import date
-from pathlib import Path
-from typing import Any, Optional
-
 import json
 import logging
 import re
-
+from dataclasses import dataclass, field
+from datetime import date
+from pathlib import Path
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +27,7 @@ class SourceReference:
     title: str
     url: str
     accessed: str = field(default_factory=lambda: date.today().isoformat())
-    notes: Optional[str] = None
+    notes: str | None = None
 
     def to_dict(self) -> dict:
         result = {
@@ -63,19 +61,19 @@ class PropertyValue:
     unit: str
     source_id: str
 
-    uncertainty: Optional[float] = None
+    uncertainty: float | None = None
 
-    minimum: Optional[float] = None
-    maximum: Optional[float] = None
+    minimum: float | None = None
+    maximum: float | None = None
 
-    temperature: Optional[float] = None
-    temperature_unit: Optional[str] = None
+    temperature: float | None = None
+    temperature_unit: str | None = None
 
-    condition: Optional[str] = None
+    condition: str | None = None
 
-    original_value: Optional[str] = None
+    original_value: str | None = None
 
-    notes: Optional[str] = None
+    notes: str | None = None
 
     def to_dict(self) -> dict:
 
@@ -122,17 +120,17 @@ class MaterialRecord:
     name: str
     category: str
 
-    composition: Optional[str] = None
-    grade: Optional[str] = None
+    composition: str | None = None
+    grade: str | None = None
 
     properties: dict[str, PropertyValue] = field(default_factory=dict)
 
     source_ids: list[str] = field(default_factory=list)
 
-    source_material_id: Optional[str] = None
-    source_url: Optional[str] = None
+    source_material_id: str | None = None
+    source_url: str | None = None
 
-    notes: Optional[str] = None
+    notes: str | None = None
 
     def add_property(
         self,
@@ -215,7 +213,7 @@ def clean_text(value: Any) -> str:
 
 def parse_float(
     value: Any,
-) -> Optional[float]:
+) -> float | None:
     """
     Parse a simple numeric value.
 
@@ -252,7 +250,7 @@ def parse_float(
 
 def normalize_property_name(
     value: str,
-) -> Optional[str]:
+) -> str | None:
 
     value = clean_text(value).lower()
 

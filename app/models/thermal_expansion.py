@@ -16,7 +16,7 @@ Where:
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Tuple
+
 import numpy as np
 
 
@@ -72,7 +72,7 @@ def generate_temperature_curve(
     t_start: float,
     t_end: float,
     points: int = 100,
-) -> Tuple[np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray]:
     """
     Generate (temperatures_K, lengths_m) array for graphing.
     """
