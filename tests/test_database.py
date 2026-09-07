@@ -2,8 +2,8 @@
 Tests for MaterialDatabase.
 """
 
-from app.data.database import MaterialDatabase
 from app.core.material import Material
+from app.data.database import MaterialDatabase
 
 
 def test_database_loading_and_counts():

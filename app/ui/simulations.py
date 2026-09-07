@@ -16,7 +16,6 @@ import app.models.heat_capacity as hcap_model
 import app.models.heat_conduction as hc_model
 import app.models.stress_strain as ss_model
 import app.models.thermal_expansion as te_model
-
 from app.data.database import MaterialDatabase
 from app.ui.qt import (
     QComboBox,
@@ -31,7 +30,6 @@ from app.ui.qt import (
     QVBoxLayout,
     QWidget,
 )
-
 from app.ui.widgets import EducationalExplanationCard, MplCanvas, StatBadge
 
 

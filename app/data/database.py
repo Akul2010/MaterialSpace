@@ -76,10 +76,7 @@ class MaterialDatabase:
 
     def get_all_materials(self) -> list[Material]:
         """Return all materials sorted alphabetically by name."""
-        return sorted(
-            self._materials,
-            key=lambda material: material.name.casefold()
-        )
+        return sorted(self._materials, key=lambda material: material.name.casefold())
 
     def get_categories(self) -> list[str]:
         """Return unique sorted categories present in the database."""

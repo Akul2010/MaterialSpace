@@ -100,7 +100,7 @@ MODEL_INFO = {
     ],
     "limitations": [
         "Becomes inaccurate across wide temperature swings where α varies strongly with temperature.",
-        "Does not account for anisotropic thermal expansion in non-cubic crystals or unidirectional composites unless specified along principal axis.",
+        "Does not account for anisotropic thermal expansion in non-cubic crystals or unidirectional composites unless specified along principal axis.",  # anisotropic means different expansion rates in different directions
         "Does not predict thermal shock fracture or thermal buckling under compressive restraint.",
     ],
 }
