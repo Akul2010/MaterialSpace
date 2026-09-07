@@ -3,6 +3,7 @@ Tests for MaterialDatabase.
 """
 
 from app.data.database import MaterialDatabase
+from app.core.material import Material
 
 
 def test_database_loading_and_counts():
@@ -51,3 +52,19 @@ def test_database_comparison():
     assert len(mats) == 2
     assert mats[0].id == "aluminum_6061_t6"
     assert mats[1].id == "titanium_ti6al4v_grade5"
+
+
+def test_database_returns_materials_sorted_by_name():
+    db = MaterialDatabase(
+        [
+            Material(id="zinc", name="Zinc", category="metal"),
+            Material(id="aluminum", name="aluminum", category="metal"),
+            Material(id="copper", name="Copper", category="metal"),
+        ]
+    )
+
+    assert [material.name for material in db.get_all_materials()] == [
+        "aluminum",
+        "Copper",
+        "Zinc",
+    ]
