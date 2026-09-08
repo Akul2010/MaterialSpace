@@ -16,6 +16,12 @@ QMainWindow, QWidget {
     selection-color: #ffffff;
 }
 
+QLabel {
+    background-color: transparent;
+    selection-background-color: #30363d;
+    selection-color: #e6edf3;
+}
+
 /* Scrollbars */
 QScrollBar:vertical {
     border: none;
