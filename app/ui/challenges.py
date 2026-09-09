@@ -202,11 +202,20 @@ class ChallengesView(QWidget):
         self._build_candidate_controls()
         self._recalculate_rankings()
 
+    def _clear_layout(self, layout):
+        while layout.count():
+            item = layout.takeAt(0)
+            widget = item.widget()
+            child_layout = item.layout()
+            if widget:
+                widget.hide()
+                widget.deleteLater()
+            elif child_layout:
+                self._clear_layout(child_layout)
+                child_layout.deleteLater()
+
     def _build_scenario_header(self):
-        while self.desc_layout.count():
-            w = self.desc_layout.takeAt(0).widget()
-            if w:
-                w.deleteLater()
+        self._clear_layout(self.desc_layout)
 
         ch = self.current_challenge
 
@@ -233,13 +242,7 @@ class ChallengesView(QWidget):
         self.desc_layout.addWidget(ctx_lbl)
 
     def _build_weight_controls(self):
-        while self.weights_layout.count():
-            item = self.weights_layout.takeAt(0)
-            if item.widget():
-                item.widget().deleteLater()
-            elif item.layout():
-                # clear sublayout
-                pass
+        self._clear_layout(self.weights_layout)
 
         self.sliders.clear()
         self.slider_labels.clear()
@@ -287,10 +290,7 @@ class ChallengesView(QWidget):
         self.weights_layout.addWidget(reset_btn)
 
     def _build_candidate_controls(self):
-        while self.candidates_layout.count():
-            item = self.candidates_layout.takeAt(0)
-            if item.widget():
-                item.widget().deleteLater()
+        self._clear_layout(self.candidates_layout)
 
         self.candidate_checks.clear()
 
@@ -353,12 +353,7 @@ class ChallengesView(QWidget):
         self._recalculate_rankings()
 
     def _recalculate_rankings(self):
-        while self.results_layout.count():
-            item = self.results_layout.takeAt(0)
-            if item.widget():
-                item.widget().deleteLater()
-            elif item.layout():
-                pass
+        self._clear_layout(self.results_layout)
 
         candidates = [
             self.db.get_material(mid)
