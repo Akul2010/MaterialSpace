@@ -1,2 +1,3 @@
-# MaterialsSpace
+# MaterialSpace
 
+Welcome to MaterialSpace!
