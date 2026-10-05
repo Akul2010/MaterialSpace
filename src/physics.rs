@@ -15,11 +15,7 @@ use crate::material::Material;
 /// 1. Isotropic material behavior (expansion is equal in all directions).
 /// 2. Constant coefficient of thermal expansion over the given temperature range.
 /// 3. Free expansion without external mechanical constraints.
-pub fn thermal_expansion(
-    material: &Material,
-    initial_length: f64,
-    delta_temperature: f64,
-) -> Option<f64> {
+pub fn thermal_expansion(material: &Material, initial_length: f64, delta_temperature: f64) -> Option<f64> {
     let alpha = material.thermal_expansion_val()?;
     Some(thermal_expansion_raw(alpha, initial_length, delta_temperature))
 }
