@@ -64,7 +64,8 @@
         "unit": "Pa",
         "source_id": "asm_handbook",
         "condition": "Ultimate",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 310000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 855.0,
@@ -134,7 +135,8 @@
         "value": 572000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 572000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 750.0,
@@ -203,7 +205,8 @@
         "value": 483000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 483000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 775.0,
@@ -274,7 +277,8 @@
         "value": 950000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 950000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.35,
@@ -351,7 +355,8 @@
         "value": 860000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 860000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1933.0,
@@ -420,7 +425,8 @@
         "value": 505000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 505000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.45,
@@ -496,7 +502,8 @@
         "value": 580000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 580000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1648.0,
@@ -565,7 +572,8 @@
         "value": 1310000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 1310000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1677.0,
@@ -635,7 +643,8 @@
         "value": 1375000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 1375000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.82,
@@ -712,7 +721,8 @@
         "value": 930000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 930000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1563.0,
@@ -783,7 +793,8 @@
         "value": 220000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 220000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1356.0,
@@ -852,7 +863,8 @@
         "value": 1310000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 1310000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1140.0,
@@ -921,7 +933,8 @@
         "value": 290000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 290000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 905.0,
@@ -990,7 +1003,8 @@
         "value": 980000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 980000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 3695.0,
@@ -1066,7 +1080,8 @@
         "value": 650000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 650000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 2896.0,
@@ -1135,7 +1150,8 @@
         "value": 300000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 300000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 3290.0,
@@ -1204,7 +1220,8 @@
         "value": 1080000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 1080000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1690.0,
@@ -1273,7 +1290,8 @@
         "value": 440000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 440000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1750.0,
@@ -1332,13 +1350,6 @@
         "original_value": 370000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
-        "value": 220000000.0,
-        "unit": "Pa",
-        "source_id": "matweb",
-        "condition": "Flexural/Tensile",
-        "normalization_warning": "Could not normalize Pa"
-      },
       "emissivity": {
         "value": 0.7,
         "unit": "dimensionless",
@@ -1352,6 +1363,14 @@
         "source_id": "matweb",
         "original_value": 2345.0,
         "original_unit": "K"
+      },
+      "flexural_strength": {
+        "value": 220000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural/Tensile",
+        "original_value": 220000000.0,
+        "original_unit": "Pa"
       }
     }
   },
@@ -1402,13 +1421,6 @@
         "original_value": 410000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
-        "value": 380000000.0,
-        "unit": "Pa",
-        "source_id": "matweb",
-        "condition": "Flexural",
-        "normalization_warning": "Could not normalize Pa"
-      },
       "emissivity": {
         "value": 0.85,
         "unit": "dimensionless",
@@ -1423,6 +1435,14 @@
         "notes": "Sublimes/Decomposes",
         "original_value": 3003.0,
         "original_unit": "K"
+      },
+      "flexural_strength": {
+        "value": 380000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural",
+        "original_value": 380000000.0,
+        "original_unit": "Pa"
       }
     }
   },
@@ -1473,13 +1493,6 @@
         "original_value": 310000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
-        "value": 750000000.0,
-        "unit": "Pa",
-        "source_id": "matweb",
-        "condition": "Flexural strength",
-        "normalization_warning": "Could not normalize Pa"
-      },
       "emissivity": {
         "value": 0.78,
         "unit": "dimensionless",
@@ -1494,6 +1507,14 @@
         "notes": "Decomposes",
         "original_value": 2173.0,
         "original_unit": "K"
+      },
+      "flexural_strength": {
+        "value": 750000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural strength",
+        "original_value": 750000000.0,
+        "original_unit": "Pa"
       }
     }
   },
@@ -1544,13 +1565,6 @@
         "original_value": 210000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
-        "value": 1200000000.0,
-        "unit": "Pa",
-        "source_id": "matweb",
-        "condition": "Flexural strength",
-        "normalization_warning": "Could not normalize Pa"
-      },
       "emissivity": {
         "value": 0.4,
         "unit": "dimensionless",
@@ -1564,6 +1578,14 @@
         "source_id": "matweb",
         "original_value": 2988.0,
         "original_unit": "K"
+      },
+      "flexural_strength": {
+        "value": 1200000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Flexural strength",
+        "original_value": 1200000000.0,
+        "original_unit": "Pa"
       }
     }
   },
@@ -1614,11 +1636,13 @@
         "original_value": 460000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
+      "flexural_strength": {
         "value": 350000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "condition": "Flexural strength (3-point bend)",
+        "original_value": 350000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 2623.0,
@@ -1676,11 +1700,13 @@
         "original_value": 320000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
+      "flexural_strength": {
         "value": 310000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "condition": "Flexural strength (3-point bend)",
+        "original_value": 310000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 2473.0,
@@ -1739,11 +1765,13 @@
         "original_value": 140000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
+      "flexural_strength": {
         "value": 180000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "condition": "Flexural strength (3-point bend)",
+        "original_value": 180000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.8,
@@ -1818,7 +1846,8 @@
         "value": 30000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 30000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.85,
@@ -1893,7 +1922,8 @@
         "value": 100000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 100000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 616.0,
@@ -1961,7 +1991,8 @@
         "value": 69000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 69000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 428.0,
@@ -2030,7 +2061,8 @@
         "value": 83000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 83000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 533.0,
@@ -2099,7 +2131,8 @@
         "value": 231000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 231000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.86,
@@ -2175,7 +2208,8 @@
         "value": 40000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 40000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 408.0,
@@ -2243,7 +2277,8 @@
         "value": 31000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 31000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 404.0,
@@ -2311,7 +2346,8 @@
         "value": 37000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 37000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 438.0,
@@ -2372,7 +2408,8 @@
         "value": 72000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 72000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 433.0,
@@ -2441,7 +2478,8 @@
         "value": 47000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 47000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 378.0,
@@ -2508,7 +2546,8 @@
         "unit": "Pa",
         "source_id": "asm_handbook",
         "condition": "0° longitudinal",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 2100000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.88,
@@ -2570,7 +2609,8 @@
         "value": 580000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 580000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.85,
@@ -2639,7 +2679,8 @@
         "value": 350000000.0,
         "unit": "Pa",
         "source_id": "asm_handbook",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 350000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.82,
@@ -2701,7 +2742,8 @@
         "value": 280000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 280000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.85,
@@ -2771,7 +2813,8 @@
         "value": 320000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 320000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.84,
@@ -2835,13 +2878,6 @@
         "original_value": 64000000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
-        "value": 70000000.0,
-        "unit": "Pa",
-        "source_id": "matweb",
-        "condition": "Bending strength",
-        "normalization_warning": "Could not normalize Pa"
-      },
       "emissivity": {
         "value": 0.92,
         "unit": "dimensionless",
@@ -2856,6 +2892,14 @@
         "notes": "Softening point 820 °C",
         "original_value": 1093.0,
         "original_unit": "K"
+      },
+      "flexural_strength": {
+        "value": 70000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Bending strength",
+        "original_value": 70000000.0,
+        "original_unit": "Pa"
       }
     }
   },
@@ -2910,7 +2954,8 @@
         "value": 55000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 55000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.88,
@@ -2979,7 +3024,8 @@
         "value": 45000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 45000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.94,
@@ -3046,19 +3092,20 @@
         "original_value": 90300000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
-        "value": 90000000.0,
-        "unit": "Pa",
-        "source_id": "matweb",
-        "condition": "Bending strength",
-        "normalization_warning": "Could not normalize Pa"
-      },
       "emissivity": {
         "value": 0.89,
         "unit": "dimensionless",
         "source_id": "nasa_tpsx",
         "original_value": 0.89,
         "original_unit": "dimensionless"
+      },
+      "flexural_strength": {
+        "value": 90000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Bending strength",
+        "original_value": 90000000.0,
+        "original_unit": "Pa"
       }
     }
   },
@@ -3109,19 +3156,20 @@
         "original_value": 66900000000.0,
         "original_unit": "Pa"
       },
-      "tensile_strength": {
-        "value": 94000000.0,
-        "unit": "Pa",
-        "source_id": "matweb",
-        "condition": "Modulus of Rupture",
-        "normalization_warning": "Could not normalize Pa"
-      },
       "emissivity": {
         "value": 0.88,
         "unit": "dimensionless",
         "source_id": "nasa_tpsx",
         "original_value": 0.88,
         "original_unit": "dimensionless"
+      },
+      "flexural_strength": {
+        "value": 94000000.0,
+        "unit": "Pa",
+        "source_id": "matweb",
+        "condition": "Modulus of Rupture",
+        "original_value": 94000000.0,
+        "original_unit": "Pa"
       }
     }
   },
@@ -3177,7 +3225,8 @@
         "value": 1200000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 1200000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 4300.0,
@@ -3242,7 +3291,8 @@
         "unit": "Pa",
         "source_id": "matweb",
         "condition": "Tensile",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 38000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.85,
@@ -3313,7 +3363,8 @@
         "value": 160000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 160000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1687.0,
@@ -3390,7 +3441,8 @@
         "value": 190000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 190000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1811.0,
@@ -3467,7 +3519,8 @@
         "value": 462000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 462000000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1728.0,
@@ -3530,7 +3583,8 @@
         "unit": "Pa",
         "source_id": "nasa_tpsx",
         "condition": "Through-thickness tensile",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 170000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.88,
@@ -3601,7 +3655,8 @@
         "value": 1200000.0,
         "unit": "Pa",
         "source_id": "nasa_tpsx",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 1200000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.9,
@@ -3673,7 +3728,8 @@
         "value": 30000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 30000.0,
+        "original_unit": "Pa"
       },
       "melting_point": {
         "value": 1473.0,
@@ -3743,7 +3799,8 @@
         "value": 120000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 120000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.03,
@@ -3827,7 +3884,8 @@
         "value": 140000000.0,
         "unit": "Pa",
         "source_id": "matweb",
-        "normalization_warning": "Could not normalize Pa"
+        "original_value": 140000000.0,
+        "original_unit": "Pa"
       },
       "emissivity": {
         "value": 0.02,

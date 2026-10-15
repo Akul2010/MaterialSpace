@@ -57,6 +57,22 @@ PROPERTY_RULES = {
         },
         "minimum": 0,
     },
+    "tensile_strength": {
+        "unit": {
+            "Pa",
+            "MPa",
+            "GPa",
+        },
+        "minimum": 0,
+    },
+    "flexural_strength": {
+        "unit": {
+            "Pa",
+            "MPa",
+            "GPa",
+        },
+        "minimum": 0,
+    },
     "thermal_expansion": {
         "unit": {
             "1/K",
@@ -175,6 +191,11 @@ def validate_material(
 
         if "source_id" not in prop:
             errors.append(f"{material['id']}: property '{name}' has no source_id")
+
+        if "normalization_warning" in prop:
+            errors.append(
+                f"{material['id']}: property '{name}' has normalization warning: {prop['normalization_warning']}"
+            )
 
         value = prop["value"]
 

@@ -1,96 +1,144 @@
 use crate::database::Database;
 use crate::material::Material;
-use crate::metrics::RankingMetric;
+use crate::metrics::{RankedMaterialItem, RankingMetric, rank_materials};
+use crate::screening::{Constraints, ScreeningProfilePreset, ScreeningResult, screen_materials};
 
-/// The primary navigation pages in MaterialSpace.
+/// Active page in the application.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Page {
     Dashboard,
     Materials,
     Compare,
     MaterialDetails,
+    Screening,
     Rankings,
     Calculator,
     About,
 }
 
+/// Tab selector for the Screening page results.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum ScreeningTab {
+    Passed,
+    Failed,
+    InsufficientData,
+    All,
+}
+
 /// Central application state for MaterialSpace.
-///
-/// Holds the loaded material database, current navigation view,
-/// active selections, search filters, calculator parameters, and ranking configurations.
 pub struct MaterialSpaceApp {
-    /// In-memory materials and sources database.
+    /// In-memory database holding normalized materials and cited source metadata.
     pub database: Database,
 
     /// Currently active view page.
     pub page: Page,
 
-    /// Material search query string (matches name, id, composition, grade, description).
+    /// Material search query string.
     pub search_query: String,
 
-    /// Selected category filter (e.g. "All", "metal", "ceramic", "polymer", "composite").
+    /// Category filter ("All", "metal", "ceramic", etc.).
     pub category_filter: String,
 
-    /// Index of the material currently inspected in the Material Details page.
+    /// Index of the material inspected in Material Details.
     pub selected_material: Option<usize>,
 
-    /// Index of the first material in the side-by-side comparison view.
+    /// Index of first material in side-by-side comparison.
     pub comparison_a: Option<usize>,
 
-    /// Index of the second material in the side-by-side comparison view.
+    /// Index of second material in side-by-side comparison.
     pub comparison_b: Option<usize>,
 
+    // --- Screening State ---
+    /// Active user-configured screening constraints.
+    pub screening_constraints: Constraints,
+    /// Currently loaded screening profile preset, if any.
+    pub selected_preset: Option<ScreeningProfilePreset>,
+    /// Active tab in screening results view.
+    pub screening_tab: ScreeningTab,
+    /// Cached screening evaluation results.
+    pub screening_cache: Option<Vec<ScreeningResult>>,
+
+    // --- Rankings State ---
     /// Selected metric for material rankings.
     pub ranking_metric: RankingMetric,
+    /// Cached ranked material items.
+    pub ranking_cache: Option<Vec<RankedMaterialItem>>,
 
     // --- Calculator State ---
-    /// Selected material for thermal expansion calculator.
+    /// Reference ambient temperature in Kelvin (default: 293.15 K = 20 °C).
+    pub ambient_temperature_k: f64,
+
+    // 1. Thermal Expansion
     pub calc_expansion_material: Option<usize>,
-    /// Initial length L₀ in meters for thermal expansion calculation.
     pub initial_length: f64,
-    /// Temperature change ΔT in Kelvin for thermal expansion calculation.
     pub delta_temperature: f64,
 
-    /// Selected material for heat energy calculator (auto-populates specific heat).
+    // 2. Heat Energy Transfer
     pub calc_heat_material: Option<usize>,
-    /// Mass in kilograms for heat energy calculation.
     pub calculator_mass: f64,
-    /// Specific heat capacity c in J/(kg·K) for heat energy calculation.
-    pub calculator_specific_heat: f64,
-    /// Temperature change ΔT in Kelvin for heat energy calculation.
+    /// Specific heat capacity c (J/(kg·K)). `None` if material lacks specific heat.
+    pub calculator_specific_heat: Option<f64>,
     pub heat_delta_temperature: f64,
 
-    /// Selected material for thermal stress calculator.
+    // 3. Thermal Stress
     pub calc_stress_material: Option<usize>,
-    /// Temperature change ΔT in Kelvin for thermal stress calculation.
     pub stress_delta_temperature: f64,
 
-    /// Any startup error or notification message to display.
+    // 4. Heat Conduction
+    pub calc_conduction_material: Option<usize>,
+    pub conduction_area: f64,
+    pub conduction_thickness: f64,
+    pub conduction_delta_t: f64,
+
+    // 5. Thermal Diffusion Timescale
+    pub calc_diffusion_material: Option<usize>,
+    pub diffusion_thickness: f64,
+
+    // --- Feedback & Notifications ---
     pub status_message: Option<String>,
+    pub export_notice: Option<String>,
 }
 
 impl MaterialSpaceApp {
-    /// Initializes application state, loads normalized datasets, and configures defaults.
     pub fn new(_cc: &eframe::CreationContext<'_>) -> Self {
         let (database, status_message) = match Database::load() {
-            Ok(db) => (db, None),
+            Ok(db) => {
+                let note = if db.is_from_embedded_fallback {
+                    Some(
+                        "Operating in self-contained mode using compiled-in baseline dataset."
+                            .into(),
+                    )
+                } else {
+                    None
+                };
+                (db, note)
+            }
             Err(err) => {
                 eprintln!("Database load error: {}", err);
                 (
                     Database {
                         materials: Vec::new(),
                         sources: std::collections::HashMap::new(),
+                        cache_manager: crate::retrieval::LocalCacheManager::new("."),
+                        is_from_embedded_fallback: false,
                     },
-                    Some(format!("Database initialization warning: {}", err)),
+                    Some(format!("Database Initialization Warning: {}", err)),
                 )
             }
         };
 
-        // Pick default initial selections if materials are loaded
-        let default_first = if !database.materials.is_empty() { Some(0) } else { None };
-        let default_second = if database.materials.len() > 1 { Some(1) } else { default_first };
+        let default_first = if !database.materials.is_empty() {
+            Some(0)
+        } else {
+            None
+        };
+        let default_second = if database.materials.len() > 1 {
+            Some(1)
+        } else {
+            default_first
+        };
 
-        Self {
+        let mut app = Self {
             database,
             page: Page::Dashboard,
             search_query: String::new(),
@@ -98,7 +146,16 @@ impl MaterialSpaceApp {
             selected_material: default_first,
             comparison_a: default_first,
             comparison_b: default_second,
+
+            screening_constraints: Constraints::default(),
+            selected_preset: None,
+            screening_tab: ScreeningTab::Passed,
+            screening_cache: None,
+
             ranking_metric: RankingMetric::AerospaceScore,
+            ranking_cache: None,
+
+            ambient_temperature_k: 293.15,
 
             calc_expansion_material: default_first,
             initial_length: 1.0,
@@ -106,35 +163,233 @@ impl MaterialSpaceApp {
 
             calc_heat_material: default_first,
             calculator_mass: 1.0,
-            calculator_specific_heat: 900.0,
+            calculator_specific_heat: None,
             heat_delta_temperature: 50.0,
 
             calc_stress_material: default_first,
             stress_delta_temperature: 100.0,
 
+            calc_conduction_material: default_first,
+            conduction_area: 1.0,
+            conduction_thickness: 0.02,
+            conduction_delta_t: 50.0,
+
+            calc_diffusion_material: default_first,
+            diffusion_thickness: 0.01,
+
             status_message,
-        }
+            export_notice: None,
+        };
+
+        // Initialize calculator synchronization for the initial selection
+        app.sync_calculator_material(default_first);
+        app
     }
 
-    /// Convenience helper to access a material reference by its database index.
+    /// Access material reference by index.
     pub fn material(&self, index: Option<usize>) -> Option<&Material> {
         index.and_then(|i| self.database.get(i))
     }
 
-    /// Returns the filtered list of materials matching current search and category criteria.
+    /// Returns filtered materials matching search query and category filter.
     pub fn filtered_materials(&self) -> Vec<(usize, &Material)> {
-        self.database.search(&self.search_query, &self.category_filter)
+        self.database
+            .search(&self.search_query, &self.category_filter)
     }
 
-    /// Helper to navigate directly to the Material Details page for a specific material index.
+    /// Navigates to Material Details page for the specified material index.
     pub fn inspect_material(&mut self, index: usize) {
         self.selected_material = Some(index);
         self.page = Page::MaterialDetails;
+    }
+
+    /// Synchronizes all calculator state with the selected material.
+    ///
+    /// **Regression Fix**: Automatically updates or clears `calculator_specific_heat`.
+    /// If the selected material lacks specific heat data, sets `calculator_specific_heat = None`
+    /// to avoid stale property usage from a previously selected material.
+    pub fn sync_calculator_material(&mut self, material_index: Option<usize>) {
+        self.calc_expansion_material = material_index;
+        self.calc_heat_material = material_index;
+        self.calc_stress_material = material_index;
+        self.calc_conduction_material = material_index;
+        self.calc_diffusion_material = material_index;
+
+        if let Some(idx) = material_index {
+            if let Some(mat) = self.database.get(idx) {
+                self.calculator_specific_heat = mat.specific_heat_val();
+            } else {
+                self.calculator_specific_heat = None;
+            }
+        } else {
+            self.calculator_specific_heat = None;
+        }
+    }
+
+    /// Re-evaluates materials screening against current constraints.
+    pub fn run_screening(&mut self) {
+        self.screening_cache = Some(screen_materials(
+            &self.database.materials,
+            &self.screening_constraints,
+        ));
+    }
+
+    /// Returns screening results, computing them if not already cached.
+    pub fn get_screening_results(&mut self) -> &[ScreeningResult] {
+        if self.screening_cache.is_none() {
+            self.run_screening();
+        }
+        self.screening_cache.as_ref().unwrap()
+    }
+
+    /// Re-computes material rankings for the current metric.
+    pub fn run_rankings(&mut self) {
+        self.ranking_cache = Some(rank_materials(
+            &self.database.materials,
+            self.ranking_metric,
+        ));
+    }
+
+    /// Returns ranked items, computing them if not already cached.
+    pub fn get_rankings(&mut self) -> &[RankedMaterialItem] {
+        if self.ranking_cache.is_none() {
+            self.run_rankings();
+        }
+        self.ranking_cache.as_ref().unwrap()
     }
 }
 
 impl eframe::App for MaterialSpaceApp {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         crate::ui::render(self, ui);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::material::Property;
+
+    fn make_mock_app() -> MaterialSpaceApp {
+        let mat_with_cp = Material {
+            id: "mat_cp".into(),
+            name: "Material With Cp".into(),
+            category: "metal".into(),
+            composition: None,
+            grade: None,
+            description: None,
+            source_ids: vec![],
+            aliases: vec![],
+            density: None,
+            youngs_modulus: None,
+            yield_strength: None,
+            tensile_strength: None,
+            flexural_strength: None,
+            thermal_conductivity: None,
+            specific_heat: Some(Property {
+                value: 900.0,
+                unit: Some("J/(kg*K)".into()),
+                source_id: None,
+                condition: None,
+                test_method: None,
+                temperature: None,
+                original_value: None,
+                original_unit: None,
+                uncertainty: None,
+                notes: None,
+                normalization_warning: None,
+            }),
+            thermal_expansion: None,
+            emissivity: None,
+            melting_point: None,
+            boiling_point: None,
+        };
+
+        let mat_without_cp = Material {
+            id: "mat_nocp".into(),
+            name: "Material Without Cp".into(),
+            category: "ceramic".into(),
+            composition: None,
+            grade: None,
+            description: None,
+            source_ids: vec![],
+            aliases: vec![],
+            density: None,
+            youngs_modulus: None,
+            yield_strength: None,
+            tensile_strength: None,
+            flexural_strength: None,
+            thermal_conductivity: None,
+            specific_heat: None, // Missing!
+            thermal_expansion: None,
+            emissivity: None,
+            melting_point: None,
+            boiling_point: None,
+        };
+
+        let db = Database {
+            materials: vec![mat_with_cp, mat_without_cp],
+            sources: std::collections::HashMap::new(),
+            cache_manager: crate::retrieval::LocalCacheManager::new("."),
+            is_from_embedded_fallback: true,
+        };
+
+        MaterialSpaceApp {
+            database: db,
+            page: Page::Dashboard,
+            search_query: String::new(),
+            category_filter: "All".into(),
+            selected_material: None,
+            comparison_a: None,
+            comparison_b: None,
+            screening_constraints: Constraints::default(),
+            selected_preset: None,
+            screening_tab: ScreeningTab::Passed,
+            screening_cache: None,
+            ranking_metric: RankingMetric::AerospaceScore,
+            ranking_cache: None,
+            ambient_temperature_k: 293.15,
+            calc_expansion_material: None,
+            initial_length: 1.0,
+            delta_temperature: 100.0,
+            calc_heat_material: None,
+            calculator_mass: 1.0,
+            calculator_specific_heat: None,
+            heat_delta_temperature: 50.0,
+            calc_stress_material: None,
+            stress_delta_temperature: 100.0,
+            calc_conduction_material: None,
+            conduction_area: 1.0,
+            conduction_thickness: 0.02,
+            conduction_delta_t: 50.0,
+            calc_diffusion_material: None,
+            diffusion_thickness: 0.01,
+            status_message: None,
+            export_notice: None,
+        }
+    }
+
+    #[test]
+    fn test_calculator_synchronization_regression() {
+        let mut app = make_mock_app();
+
+        // 1. Select material with specific heat
+        app.sync_calculator_material(Some(0));
+        assert_eq!(
+            app.calculator_specific_heat,
+            Some(900.0),
+            "Calculator specific heat must synchronize to 900.0"
+        );
+
+        // 2. Select material WITHOUT specific heat
+        app.sync_calculator_material(Some(1));
+        assert_eq!(
+            app.calculator_specific_heat, None,
+            "Calculator specific heat must be cleared to None to prevent using stale properties"
+        );
+
+        // 3. Clear material selection
+        app.sync_calculator_material(None);
+        assert_eq!(app.calculator_specific_heat, None);
     }
 }

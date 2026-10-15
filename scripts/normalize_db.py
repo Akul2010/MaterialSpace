@@ -99,12 +99,18 @@ def convert_value(
             )
 
     # --------------------------------------------------------
-    # Yield strength
+    # Yield strength, Tensile strength, and Flexural strength
     # --------------------------------------------------------
 
-    if property_name == ("yield_strength"):
+    if property_name in ("yield_strength", "tensile_strength", "flexural_strength"):
         if unit == "Pa":
             return value, "Pa"
+
+        if unit == "kPa":
+            return (
+                value * 1_000,
+                "Pa",
+            )
 
         if unit == "MPa":
             return (
@@ -115,6 +121,18 @@ def convert_value(
         if unit == "GPa":
             return (
                 value * 1_000_000_000,
+                "Pa",
+            )
+
+        if unit == "psi":
+            return (
+                value * 6894.757,
+                "Pa",
+            )
+
+        if unit == "ksi":
+            return (
+                value * 6_894_757.0,
                 "Pa",
             )
 
