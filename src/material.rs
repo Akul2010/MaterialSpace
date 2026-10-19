@@ -4,8 +4,9 @@ use std::collections::HashMap;
 /// Formats a physical quantity using scientific notation for very small (< 0.001)
 /// or very large (>= 10,000) values, while keeping ordinary numbers easily readable.
 ///
-/// Preserves negative signs (e.g. negative thermal expansion coefficients in CFRP)
-/// and handles zero without emitting redundant exponents.
+/// Preserves negative signs (e.g. negative thermal expansion coefficients in CFRP).
+///
+/// Special case for 0 is required because absolute value for 0 < 0.001, so it would otherwise trigger and print as 0.000e0
 pub fn format_scientific(value: f64) -> String {
     if value == 0.0 {
         return "0.0".to_string();
@@ -13,7 +14,7 @@ pub fn format_scientific(value: f64) -> String {
 
     let abs_val = value.abs();
 
-    if abs_val >= 10_000.0 || abs_val < 0.001 {
+    if abs_val >= 10000.0 || abs_val < 0.001 {
         // e.g. 2.360e-5, -4.000e-7, 5.000e-8, 1.250e+09
         format!("{:.3e}", value)
     } else if abs_val >= 100.0 {
@@ -25,7 +26,7 @@ pub fn format_scientific(value: f64) -> String {
     }
 }
 
-/// Metadata for an authoritative scientific data source (e.g. NASA TPSX, NIST, MatWeb, ASM Handbook).
+/// Metadata for any authoritative scientific data source (e.g. NASA TPSX, NIST, MatWeb, ASM Handbook).
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SourceInfo {
     pub source_id: String,
@@ -41,10 +42,10 @@ pub struct SourceInfo {
     pub spot_check_verified: Option<String>,
 }
 
-/// A material property value with accompanying physical unit, source provenance,
-/// measurement condition, and test method metadata.
+/// A material property value with accompanying measurement unit, source data,
+/// and the exact testing conditions and methods used to test it.
 ///
-/// In materials engineering, a measurement without units, testing temperature,
+/// In materials science and engineering, a measurement without units, testing temperature,
 /// method, or source cannot be scientifically validated.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Property {
@@ -95,7 +96,7 @@ pub struct Property {
 impl Property {
     /// Returns the measurement condition or "Not recorded" if none was provided.
     ///
-    /// Adheres to scientific honesty: never displays "Standard / Ambient" when no
+    /// Remains fully transparent: never displays "Standard / Ambient" when no
     /// ambient test condition was documented in the source dataset.
     pub fn condition_display(&self) -> &str {
         match self.condition.as_deref() {

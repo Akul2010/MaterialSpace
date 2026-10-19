@@ -165,7 +165,7 @@ fn topbar_ui(app: &mut MaterialSpaceApp, ui: &mut egui::Ui) {
             ),
             Page::MaterialDetails => (
                 "Material Inspection",
-                "Detailed material datasheet with provenance, testing conditions, and heuristics",
+                "Detailed material datasheet with source data, testing conditions, and heuristics",
             ),
             Page::Screening => (
                 "Requirements Screening Engine",
@@ -181,7 +181,7 @@ fn topbar_ui(app: &mut MaterialSpaceApp, ui: &mut egui::Ui) {
             ),
             Page::About => (
                 "About MaterialSpace",
-                "Methodology, data provenance, scientific honesty, and architectural overview",
+                "Methodology, data sources, scientific honesty, and architectural overview",
             ),
         };
 
@@ -1106,8 +1106,8 @@ fn details_ui(app: &mut MaterialSpaceApp, ui: &mut egui::Ui) {
 
     ui.add_space(14.0);
 
-    // Cited Sources Provenance
-    ui.heading("Data Provenance & Scientific Citations");
+    // Cited Sources List
+    ui.heading("Data Sources & Scientific Citations");
     ui.add_space(6.0);
     ui.group(|ui| {
         if material.source_ids.is_empty() {
@@ -2011,14 +2011,14 @@ fn about_ui(ui: &mut egui::Ui) {
              built in Rust. It was developed to provide an open, transparent, and reproducible alternative to \
              black-box commercial materials databases, enabling researchers and engineering students to inspect \
              normalized data, evaluate candidates against explicit application requirements, and calculate \
-             physical responses with full provenance.",
+             physical responses with full transparency.",
         );
     });
 
     ui.add_space(14.0);
 
     ui.group(|ui| {
-        ui.heading("Scientific Data Provenance & Cited References");
+        ui.heading("Scientific Data History & Cited References");
         ui.add_space(6.0);
         ui.label("Properties in MaterialSpace originate from normalized datasets cited from four authoritative sources:");
         ui.add_space(6.0);
