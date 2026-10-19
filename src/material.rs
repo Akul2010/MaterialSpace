@@ -17,11 +17,17 @@ pub fn format_scientific(value: f64) -> String {
     if abs_val >= 10000.0 || abs_val < 0.001 {
         // e.g. 2.360e-5, -4.000e-7, 5.000e-8, 1.250e+09
         format!("{:.3e}", value)
-    } else if abs_val >= 100.0 {
+    }
+    
+    else if abs_val >= 100.0 {
         format!("{:.1}", value)
-    } else if abs_val >= 1.0 {
+    }
+    
+    else if abs_val >= 1.0 {
         format!("{:.2}", value)
-    } else {
+    }
+    
+    else {
         format!("{:.4}", value)
     }
 }
@@ -36,10 +42,9 @@ pub struct SourceInfo {
     #[serde(default)]
     pub accessed: String,
     #[serde(default)]
-    pub notes: String,
-    /// Records transparent notes from targeted spot-checks against the cited literature.
+    pub notes: String, // General notes about the source
     #[serde(default)]
-    pub spot_check_verified: Option<String>,
+    pub spot_check_verified: Option<String>, // Notes about how source was verified
 }
 
 /// A material property value with accompanying measurement unit, source data,
