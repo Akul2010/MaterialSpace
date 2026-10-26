@@ -1,17 +1,10 @@
 use crate::material::{Material, format_scientific};
 
-/// Specific tensile strength (Ultimate Tensile Strength divided by Density).
+/// Tensile strength per unit of density.
 ///
-/// In structural and aerospace engineering:
-/// Specific Tensile Strength = σ_uts / ρ
+/// This uses actual tensile-strength data: flexural strength isn't a stand-in
+/// for a tensile test, so brittle materials without tensile data return `None`.
 ///
-/// Units:
-/// - Strength σ_uts: Pa (N/m²)
-/// - Density ρ: kg/m³
-/// - Result: (N·m)/kg = m²/s² (commonly displayed in kN·m/kg)
-///
-/// **Scientific Honesty Rule**: ONLY evaluates materials with genuine uniaxial tensile
-/// strength measurements. Brittle materials reporting flexural strength return `None`.
 pub fn specific_tensile_strength(material: &Material) -> Option<f64> {
     let tensile_strength = material.tensile_strength_val()?;
     let density = material.density_val()?;
@@ -23,11 +16,9 @@ pub fn specific_tensile_strength(material: &Material) -> Option<f64> {
     Some(tensile_strength / density)
 }
 
-/// Specific yield strength (Yield Strength divided by Density):
+/// Yield strength per unit of density.
 ///
-/// Specific Yield Strength = σ_yield / ρ
-///
-/// Used for ductile structural design to prevent permanent plastic deformation.
+/// This is handy for comparing materials when permanent deformation matters.
 pub fn specific_yield_strength(material: &Material) -> Option<f64> {
     let yield_strength = material.yield_strength_val()?;
     let density = material.density_val()?;
@@ -39,11 +30,9 @@ pub fn specific_yield_strength(material: &Material) -> Option<f64> {
     Some(yield_strength / density)
 }
 
-/// Specific flexural strength (Modulus of Rupture divided by Density):
+/// Flexural strength per unit of density.
 ///
-/// Specific Flexural Strength = σ_flex / ρ
-///
-/// Relevant for brittle technical ceramics and glasses subjected to bending moments.
+/// This is based on bending tests, which are often used for ceramics and glass.
 pub fn specific_flexural_strength(material: &Material) -> Option<f64> {
     let flexural_strength = material.flexural_strength_val()?;
     let density = material.density_val()?;
@@ -55,15 +44,9 @@ pub fn specific_flexural_strength(material: &Material) -> Option<f64> {
     Some(flexural_strength / density)
 }
 
-/// Specific stiffness (Specific modulus):
+/// Stiffness per unit of density.
 ///
-/// Specific Modulus = E / ρ
-///
-/// Where:
-/// - E = Young's modulus of elasticity (Pa)
-/// - ρ = Density (kg/m³)
-///
-/// Measures resistance to elastic structural deflection and buckling per unit mass.
+/// It compares how stiff a material is for its weight.
 pub fn specific_stiffness(material: &Material) -> Option<f64> {
     let youngs_modulus = material.youngs_modulus_val()?;
     let density = material.density_val()?;
@@ -75,7 +58,7 @@ pub fn specific_stiffness(material: &Material) -> Option<f64> {
     Some(youngs_modulus / density)
 }
 
-/// Thermal diffusivity:
+/// Works out how quickly a temperature change spreads through a material.
 ///
 /// α_diff = k / (ρ · c_p)
 ///
@@ -91,14 +74,15 @@ pub fn thermal_diffusivity(material: &Material) -> Option<f64> {
     let rho = material.density_val()?;
     let cp = material.specific_heat_val()?;
 
-    if rho <= 0.0 || cp <= 0.0 {
+    if k < 0.0 || rho <= 0.0 || cp <= 0.0 {
         return None;
     }
 
-    Some(k / (rho * cp))
+    let diffusivity = k / (rho * cp);
+    Some(diffusivity)
 }
 
-/// Detailed result of the Aerospace Suitability Heuristic Score evaluation.
+/// The score and a few details about how it was worked out.
 #[derive(Debug, Clone)]
 pub struct AerospaceScoreResult {
     /// Final heuristic score on a 0.0 to 100.0 scale.
@@ -113,27 +97,14 @@ pub struct AerospaceScoreResult {
     pub caveats: Vec<String>,
 }
 
-/// Transparent Aerospace Suitability Heuristic Screening Score (0.0 to 100.0).
+/// A rough score for comparing materials against a few aerospace-related properties.
+/// It isn't a qualification or a substitute for engineering review.
 ///
-/// > **DISCLAIMER**: This is an exploratory heuristic screening index for comparing
-/// > relative material potential. It is NOT an aerospace specification or flight
-/// > qualification standard.
-///
-/// ### Formula, Normalization & Weights (Total = 100%):
-/// 1. **Specific Strength (40% weight)**: Uses ultimate tensile strength (or yield strength if tensile is unavailable).
-///    Normalized from 20 kN·m/kg (0.0) to 220 kN·m/kg (1.0).
-/// 2. **Specific Stiffness (35% weight)**: Uses Young's Modulus / Density.
-///    Normalized from 5.0e6 m²/s² (0.0) to 35.0e6 m²/s² (1.0).
-/// 3. **Melting Point / High-Temp Capability (15% weight)**:
-///    Normalized from 500 K (0.0) to 2500 K (1.0).
-/// 4. **Thermal Dissipation / Conductivity (10% weight)**:
-///    Normalized from 0 W/(m·K) to 200 W/(m·K) (1.0).
-///
-/// **No Density Double-Counting**: Density is explicitly accounted for in the denominators
-/// of specific strength (σ/ρ) and specific stiffness (E/ρ), without a redundant separate density term.
-///
-/// **Missing Data Policy**: If fundamental load-bearing strength or density is missing,
-/// returns `None` rather than inventing data.
+/// It combines specific strength (40%), specific stiffness (35%), melting point
+/// (15%), and thermal conductivity (10%). The score uses the same ranges as before:
+/// 20-220 kN·m/kg for strength, 5-35 million m²/s² for stiffness, 500-2500 K
+/// for melting point, and 0-200 W/(m·K) for conductivity. Missing strength or
+/// density means there's no score.
 pub fn aerospace_suitability_score(material: &Material) -> Option<AerospaceScoreResult> {
     let density = material.density_val()?;
     // Prefers tensile strength, transparently notes when using yield strength
@@ -223,7 +194,7 @@ pub fn aerospace_suitability_score(material: &Material) -> Option<AerospaceScore
     })
 }
 
-/// Generates rule-based engineering observations from verified property thresholds.
+/// Generates engineering observations using thresholds applied to recorded properties.
 pub fn generate_observations(material: &Material) -> Vec<String> {
     let mut observations = Vec::new();
 

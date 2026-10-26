@@ -4,7 +4,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::SystemTime;
 
-/// Metadata for an authorized data retrieval source.
+/// A few details about a data source and how we can use it.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SourceMetadata {
     pub source_id: String,
@@ -14,11 +14,7 @@ pub struct SourceMetadata {
     pub access_notes: String,
 }
 
-/// Official access status and documented constraints for external data sources.
-///
-/// **Scientific Honesty**: Explicitly documents the real-world machine-readable access
-/// realities for NASA TPSX, NIST, and MatWeb without pretending unauthorized scraping
-/// is an acceptable scientific practice.
+/// The access notes we show in the app. These explain what each source actually allows.
 pub fn official_source_statuses() -> Vec<SourceMetadata> {
     vec![
         SourceMetadata {
@@ -60,7 +56,7 @@ pub fn official_source_statuses() -> Vec<SourceMetadata> {
         },
     ]
 }
-/// Cache manager handling local storage, retrieval, freshness, and offline fallback.
+/// Handles the local cache, so the app can reuse data while offline.
 pub struct LocalCacheManager {
     cache_dir: PathBuf,
 }
@@ -71,7 +67,7 @@ impl LocalCacheManager {
         Self { cache_dir }
     }
 
-    /// Ensures the cache directory exists on disk.
+    /// Makes the cache folder if it isn't there yet.
     #[allow(dead_code)]
     fn ensure_cache_dir(&self) -> Result<&PathBuf, String> {
         if !self.cache_dir.exists() {
@@ -85,7 +81,7 @@ impl LocalCacheManager {
         Ok(&self.cache_dir)
     }
 
-    /// Loads cached materials from the local cache directory.
+    /// Reads any materials we've already cached.
     pub fn load_cached_materials(&self) -> Vec<Material> {
         let mut materials = Vec::new();
         if !self.cache_dir.exists() {

@@ -1,6 +1,6 @@
 use crate::material::{Material, format_scientific};
 
-/// User-defined constraints for multi-criteria materials screening.
+/// The limits a user wants to use when looking for materials.
 #[derive(Debug, Clone, Default)]
 pub struct Constraints {
     pub max_density: Option<f64>,
@@ -28,31 +28,31 @@ impl Constraints {
     }
 }
 
-/// Status of a material evaluated against screening constraints.
+/// How a material did against the selected limits.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ScreeningStatus {
-    /// Satisfies all active constraints with documented data.
+    /// It passed every check we could make.
     Passed,
-    /// Demonstrably violates one or more active constraints.
+    /// It missed at least one of the limits.
     Failed,
-    /// Lacks required data for one or more active constraints (data unavailable).
+    /// We didn't have enough data to finish every check.
     InsufficientData,
 }
 
-/// Detailed evaluation record for a screened material.
+/// The result for one material, including which checks passed or failed.
 #[derive(Debug, Clone)]
 pub struct ScreeningResult {
     pub material: Material,
     pub status: ScreeningStatus,
-    /// Specific checks that passed (with actual vs required values).
+    /// Checks it passed, with the measured and required values.
     pub passed_reasons: Vec<String>,
-    /// Specific constraints that were demonstrably violated.
+    /// Limits it didn't meet.
     pub failed_reasons: Vec<String>,
-    /// Active constraints that could not be evaluated due to missing property data.
+    /// Checks we couldn't make because some data was missing.
     pub missing_reasons: Vec<String>,
 }
 
-/// Pre-configured engineering screening profiles representing typical application criteria.
+/// A few starter sets of limits for common applications.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ScreeningProfilePreset {
     AerospaceAirframe,
@@ -147,10 +147,9 @@ impl ScreeningProfilePreset {
     }
 }
 
-/// Evaluates a single material against the specified constraints.
+/// Checks one material against the selected limits.
 ///
-/// **Scientific Honesty**: A missing property is NEVER treated as satisfying a constraint.
-/// If required data is missing, the material receives `ScreeningStatus::InsufficientData`.
+/// Missing data isn't a pass; it gets marked as insufficient instead.
 pub fn evaluate_material(material: &Material, constraints: &Constraints) -> ScreeningResult {
     let mut passed_reasons = Vec::new();
     let mut failed_reasons = Vec::new();

@@ -126,9 +126,7 @@ def validate_material(
 
     errors = []
 
-    # --------------------------------------------------------
-    # Required fields
-    # --------------------------------------------------------
+    # Check that the required fields are here.
 
     missing = REQUIRED_FIELDS - material.keys()
 
@@ -138,9 +136,7 @@ def validate_material(
     if errors:
         return errors
 
-    # --------------------------------------------------------
-    # Basic fields
-    # --------------------------------------------------------
+    # Check the basic material details.
 
     if (
         not isinstance(
@@ -168,9 +164,7 @@ def validate_material(
 
         return errors
 
-    # --------------------------------------------------------
-    # Properties
-    # --------------------------------------------------------
+    # Check the properties.
 
     for name, prop in material["properties"].items():
         if not isinstance(
@@ -210,7 +204,7 @@ def validate_material(
         rules = PROPERTY_RULES.get(name)
 
         if rules is None:
-            # Unknown properties are allowed.
+            # Keep any extra properties we don't know about.
             continue
 
         minimum = rules.get("minimum")

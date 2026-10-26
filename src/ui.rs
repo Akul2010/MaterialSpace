@@ -12,7 +12,7 @@ use crate::physics::{self, evaluate_sanity_checks};
 use crate::retrieval::official_source_statuses;
 use crate::screening::{Constraints, ScreeningProfilePreset, ScreeningResult, ScreeningStatus};
 
-/// Master rendering function called on every egui frame.
+/// Draws the current screen.
 pub fn render(app: &mut MaterialSpaceApp, ui: &mut egui::Ui) {
     // Left navigation sidebar
     egui::Panel::left("navigation_sidebar")
@@ -1137,10 +1137,9 @@ fn details_ui(app: &mut MaterialSpaceApp, ui: &mut egui::Ui) {
     });
 }
 
-/// Renders a cleanly aligned 4-column property detail table.
+/// Shows a material's properties in a four-column table.
 ///
-/// **Bug Fix**: Places normalization warnings cleanly inside the 4th column
-/// rather than creating a 5th column that shifts grid cells out of alignment.
+/// Keep warnings in the last column so the table stays lined up.
 fn property_detail_table(ui: &mut egui::Ui, id: &str, rows: &[(&str, &Option<Property>)]) {
     egui::Grid::new(id)
         .striped(true)

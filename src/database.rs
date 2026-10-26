@@ -3,12 +3,11 @@ use crate::retrieval::{LocalCacheManager, is_conservative_match};
 use std::fs;
 use std::path::Path;
 
-/// Bundled baseline dataset embedded directly into the binary at compile time.
-/// Guarantees that MaterialSpace can run offline and independently of the current working directory.
+/// The baseline data bundled into the app, so it can run offline.
 const BUNDLED_MATERIALS_JSON: &str = include_str!("../data/materials_normalized.json");
 const BUNDLED_SOURCES_JSON: &str = include_str!("../data/sources.json");
 
-/// In-memory database holding verified materials, cited source metadata, and cache access.
+/// Holds the materials and source info that the app has loaded.
 pub struct Database {
     pub materials: Vec<Material>,
     pub sources: SourcesMap,
@@ -17,8 +16,7 @@ pub struct Database {
 }
 
 impl Database {
-    /// Loads the materials database, attempting local disk files first,
-    /// integrating persistent local cache, and falling back to embedded baseline.
+    /// Loads local data when available, then fills in from the bundled copy.
     pub fn load() -> Result<Self, String> {
         let materials_path = Path::new("data/materials_normalized.json");
         let sources_path = Path::new("data/sources.json");
@@ -26,7 +24,7 @@ impl Database {
 
         let mut is_embedded = false;
 
-        // 1. Load Sources Metadata
+        // Load the source details.
         let sources: SourcesMap = if sources_path.exists() {
             match fs::read_to_string(sources_path) {
                 Ok(content) => serde_json::from_str(&content).unwrap_or_else(|e| {
@@ -39,7 +37,7 @@ impl Database {
             serde_json::from_str(BUNDLED_SOURCES_JSON).unwrap_or_default()
         };
 
-        // 2. Load Materials Dataset
+        // Load the materials.
         let raw_materials: Vec<RawMaterial> = if materials_path.exists() {
             match fs::read_to_string(materials_path) {
                 Ok(content) => match serde_json::from_str::<Vec<RawMaterial>>(&content) {
@@ -69,7 +67,7 @@ impl Database {
 
         let mut materials: Vec<Material> = raw_materials.into_iter().map(Material::from).collect();
 
-        // 3. Integrate Local Cache (Non-destructive: does not overwrite curated baseline materials)
+        // Add cached materials without replacing the ones already here.
         let cached_records = cache_manager.load_cached_materials();
         for cached in cached_records {
             let already_exists = materials
@@ -80,7 +78,7 @@ impl Database {
             }
         }
 
-        // Sort alphabetically by canonical name for deterministic UI display
+        // Keep the list in name order for the UI.
         materials.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
 
         Ok(Self {

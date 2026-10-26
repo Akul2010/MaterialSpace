@@ -4,9 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-# ============================================================
-# CONVERSION FUNCTIONS
-# ============================================================
+# Unit conversion helpers
 
 
 def convert_value(
@@ -17,9 +15,7 @@ def convert_value(
 
     unit = unit.strip()
 
-    # --------------------------------------------------------
     # Density
-    # --------------------------------------------------------
 
     if property_name == "density":
         if unit in {
@@ -37,9 +33,7 @@ def convert_value(
                 "kg/m^3",
             )
 
-    # --------------------------------------------------------
     # Thermal conductivity
-    # --------------------------------------------------------
 
     if property_name == ("thermal_conductivity"):
         if unit in {
@@ -53,9 +47,7 @@ def convert_value(
                 "W/(m*K)",
             )
 
-    # --------------------------------------------------------
     # Specific heat
-    # --------------------------------------------------------
 
     if property_name == "specific_heat":
         if unit in {
@@ -78,9 +70,7 @@ def convert_value(
                 "J/(kg*K)",
             )
 
-    # --------------------------------------------------------
     # Young's modulus
-    # --------------------------------------------------------
 
     if property_name == ("youngs_modulus"):
         if unit == "Pa":
@@ -98,9 +88,7 @@ def convert_value(
                 "Pa",
             )
 
-    # --------------------------------------------------------
-    # Yield strength, Tensile strength, and Flexural strength
-    # --------------------------------------------------------
+    # Strength values
 
     if property_name in ("yield_strength", "tensile_strength", "flexural_strength"):
         if unit == "Pa":
@@ -136,9 +124,7 @@ def convert_value(
                 "Pa",
             )
 
-    # --------------------------------------------------------
     # Thermal expansion
-    # --------------------------------------------------------
 
     if property_name == ("thermal_expansion"):
         if unit == "1/K":
@@ -158,9 +144,7 @@ def convert_value(
                 "1/K",
             )
 
-    # --------------------------------------------------------
     # Temperature
-    # --------------------------------------------------------
 
     if property_name in {
         "melting_point",
@@ -178,23 +162,17 @@ def convert_value(
                 "K",
             )
 
-    # --------------------------------------------------------
     # Emissivity
-    # --------------------------------------------------------
 
     if property_name == "emissivity":
         return value, "dimensionless"
 
-    # --------------------------------------------------------
-    # Unknown
-    # --------------------------------------------------------
+    # Leave unknown units alone.
 
     raise ValueError(f"Unknown conversion: {property_name} / {unit}")
 
 
-# ============================================================
-# DATABASE
-# ============================================================
+# Normalize the database
 
 
 def normalize_material(
@@ -233,8 +211,7 @@ def normalize_material(
             prop["unit"] = new_unit
 
         except ValueError:
-            # Unknown properties are
-            # intentionally preserved.
+            # Keep properties we don't recognize instead of dropping them.
             prop["normalization_warning"] = f"Could not normalize {unit}"
 
     return material

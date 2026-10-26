@@ -34,9 +34,7 @@ def merge_material(
     incoming: dict,
 ) -> dict:
 
-    # --------------------------------------------------------
-    # Properties
-    # --------------------------------------------------------
+    # Add the material properties.
 
     existing_properties = existing.setdefault(
         "properties",
@@ -49,17 +47,11 @@ def merge_material(
     )
 
     for name, prop in incoming_properties.items():
-        # Existing data wins.
-        #
-        # This prevents a second source from
-        # silently replacing a previously
-        # reviewed value.
+        # Keep the current value instead of quietly replacing it with another source.
         if name not in existing_properties:
             existing_properties[name] = prop
 
-    # --------------------------------------------------------
-    # Sources
-    # --------------------------------------------------------
+    # Add the source details.
 
     existing_sources = existing.setdefault(
         "source_ids",

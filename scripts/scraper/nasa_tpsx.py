@@ -18,16 +18,7 @@ logger = logging.getLogger(__name__)
 
 
 class NASATPSXScraper:
-    """
-    Rudimentary scraper for NASA TPSX.
-
-    This is intentionally simple.
-
-    Its job is to gather initial candidate materials.
-    The validator and human review process are responsible for
-    determining whether individual values are suitable for the
-    MaterialSpace database.
-    """
+    """Gathers candidate materials; review the values before relying on them."""
 
     NAME = "NASA TPSX"
 
@@ -52,9 +43,7 @@ class NASATPSXScraper:
             {"User-Agent": "MaterialSpace/0.1 (educational project)"}
         )
 
-    # --------------------------------------------------------
-    # SOURCE
-    # --------------------------------------------------------
+    # Source details
 
     def source_reference(
         self,
@@ -68,9 +57,7 @@ class NASATPSXScraper:
             notes=("Initial material-property source for MaterialSpace."),
         )
 
-    # --------------------------------------------------------
-    # HTTP
-    # --------------------------------------------------------
+    # Download pages
 
     def fetch(
         self,
@@ -91,9 +78,7 @@ class NASATPSXScraper:
 
         return response.text
 
-    # --------------------------------------------------------
-    # MATERIAL
-    # --------------------------------------------------------
+    # Read material details
 
     def scrape_material(
         self,
@@ -131,9 +116,7 @@ class NASATPSXScraper:
 
         return record
 
-    # --------------------------------------------------------
-    # NAME
-    # --------------------------------------------------------
+    # Find a display name
 
     def find_name(
         self,
@@ -161,9 +144,7 @@ class NASATPSXScraper:
 
         return ""
 
-    # --------------------------------------------------------
-    # CATEGORY
-    # --------------------------------------------------------
+    # Work out the material category
 
     def find_category(
         self,
@@ -206,9 +187,7 @@ class NASATPSXScraper:
 
         return "unknown"
 
-    # --------------------------------------------------------
-    # TABLES
-    # --------------------------------------------------------
+    # Read the property tables
 
     def parse_tables(
         self,
@@ -240,9 +219,7 @@ class NASATPSXScraper:
                     record,
                 )
 
-    # --------------------------------------------------------
-    # ROW
-    # --------------------------------------------------------
+    # Turn a table row into a property
 
     def parse_row(
         self,
@@ -290,9 +267,7 @@ class NASATPSXScraper:
             ),
         )
 
-    # --------------------------------------------------------
-    # BATCH
-    # --------------------------------------------------------
+    # Fetch several materials
 
     def scrape_many(
         self,

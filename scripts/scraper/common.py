@@ -11,9 +11,7 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 
-# ============================================================
-# DATA CLASSES
-# ============================================================
+# Small data classes used by the scraper
 
 
 @dataclass
@@ -173,9 +171,7 @@ class MaterialRecord:
         return result
 
 
-# ============================================================
-# TEXT / PARSING UTILITIES
-# ============================================================
+# Text and parsing helpers
 
 
 def slugify(value: str) -> str:
@@ -287,9 +283,7 @@ def normalize_property_name(
     return aliases.get(value)
 
 
-# ============================================================
-# JSON UTILITIES
-# ============================================================
+# JSON helpers
 
 
 def load_json(

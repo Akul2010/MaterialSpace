@@ -3,7 +3,7 @@ use crate::material::Material;
 use crate::metrics::{RankedMaterialItem, RankingMetric, rank_materials};
 use crate::screening::{Constraints, ScreeningProfilePreset, ScreeningResult, screen_materials};
 
-/// Active page in the application.
+/// Which page we're looking at right now.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Page {
     Dashboard,
@@ -25,18 +25,18 @@ pub enum ScreeningTab {
     All,
 }
 
-/// Central application state for MaterialSpace.
+/// The app's current selections, inputs, and loaded data.
 pub struct MaterialSpaceApp {
-    /// In-memory database holding normalized materials and cited source metadata.
+    /// The materials and source details we've loaded.
     pub database: Database,
 
-    /// Currently active view page.
+    /// The page we're showing.
     pub page: Page,
 
-    /// Material search query string.
+    /// What we're searching for.
     pub search_query: String,
 
-    /// Category filter ("All", "metal", "ceramic", etc.).
+    /// The selected category, or all of them.
     pub category_filter: String,
 
     /// Index of the material inspected in Material Details.
@@ -49,23 +49,23 @@ pub struct MaterialSpaceApp {
     pub comparison_b: Option<usize>,
 
     // --- Screening State ---
-    /// Active user-configured screening constraints.
+    /// The limits we're screening materials against.
     pub screening_constraints: Constraints,
     /// Currently loaded screening profile preset, if any.
     pub selected_preset: Option<ScreeningProfilePreset>,
     /// Active tab in screening results view.
     pub screening_tab: ScreeningTab,
-    /// Cached screening evaluation results.
+    /// Saved screening results until something changes.
     pub screening_cache: Option<Vec<ScreeningResult>>,
 
     // --- Rankings State ---
-    /// Selected metric for material rankings.
+    /// What we're using to sort the rankings.
     pub ranking_metric: RankingMetric,
     /// Cached ranked material items.
     pub ranking_cache: Option<Vec<RankedMaterialItem>>,
 
     // --- Calculator State ---
-    /// Reference ambient temperature in Kelvin (default: 293.15 K = 20 °C).
+    /// The starting temperature for the calculators.
     pub ambient_temperature_k: f64,
 
     // 1. Thermal Expansion
@@ -203,11 +203,9 @@ impl MaterialSpaceApp {
         self.page = Page::MaterialDetails;
     }
 
-    /// Synchronizes all calculator state with the selected material.
+    /// Updates the calculator inputs when the selected material changes.
     ///
-    /// **Regression Fix**: Automatically updates or clears `calculator_specific_heat`.
-    /// If the selected material lacks specific heat data, sets `calculator_specific_heat = None`
-    /// to avoid stale property usage from a previously selected material.
+    /// Clear values that the new material doesn't have, so old inputs don't stick around.
     pub fn sync_calculator_material(&mut self, material_index: Option<usize>) {
         self.calc_expansion_material = material_index;
         self.calc_heat_material = material_index;

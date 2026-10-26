@@ -5,7 +5,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::SystemTime;
 
-/// Returns current UTC timestamp approximation string.
+/// Makes a timestamp string for the export filename.
 pub fn get_timestamp_utc() -> String {
     let now = SystemTime::now()
         .duration_since(SystemTime::UNIX_EPOCH)
@@ -71,7 +71,7 @@ fn escape_csv(val: &str) -> String {
     }
 }
 
-/// Helper to save an exported string to `exports/<filename>` and return the path.
+/// Saves an export under `exports/` and gives back its path.
 pub fn save_export_file(file_name: &str, content: &str) -> Result<PathBuf, String> {
     let export_dir = Path::new("exports");
     if !export_dir.exists() {
@@ -90,7 +90,7 @@ pub fn save_export_file(file_name: &str, content: &str) -> Result<PathBuf, Strin
 // 1. Database & Material Export
 // ----------------------------------------------------------------------------
 
-/// Exports a single material datasheet to a CSV string.
+/// Turns one material's details into CSV.
 pub fn export_material_csv(material: &Material) -> String {
     let mut out = String::new();
     out.push_str("# MaterialSpace Material Datasheet Export\n");
@@ -153,7 +153,7 @@ pub fn export_material_csv(material: &Material) -> String {
     out
 }
 
-/// Exports the entire materials database to CSV format.
+/// Turns the whole materials list into CSV.
 pub fn export_database_csv(materials: &[Material]) -> String {
     let mut out = String::new();
     out.push_str("ID,Name,Category,Composition,Grade,Density (kg/m3),Young's Modulus (Pa),Yield Strength (Pa),Tensile Strength (Pa),Flexural Strength (Pa),Thermal Conductivity (W/(m*K)),Specific Heat (J/(kg*K)),Thermal Expansion (1/K),Melting Point (K),Sources\n");
@@ -205,7 +205,7 @@ pub fn export_database_csv(materials: &[Material]) -> String {
 // 2. Material Comparison Export
 // ----------------------------------------------------------------------------
 
-/// Exports a two-material comparison to CSV format with explicit units and conditions.
+/// Puts a two-material comparison into CSV, including units and test conditions.
 pub fn export_comparison_csv(a: &Material, b: &Material) -> String {
     let mut out = String::new();
     out.push_str("# MaterialSpace Side-by-Side Comparison Export\n");
@@ -301,7 +301,7 @@ pub fn export_comparison_csv(a: &Material, b: &Material) -> String {
 // 3. Screening Results Export
 // ----------------------------------------------------------------------------
 
-/// Exports materials screening results to CSV format with explicit pass/fail/missing criteria.
+/// Puts screening results into CSV, including passes, failures, and missing data.
 pub fn export_screening_csv(results: &[ScreeningResult], constraints: &Constraints) -> String {
     let mut out = String::new();
     out.push_str("# MaterialSpace Requirements Screening Export\n");
@@ -372,7 +372,7 @@ pub fn export_screening_csv(results: &[ScreeningResult], constraints: &Constrain
 // 4. Rankings Export
 // ----------------------------------------------------------------------------
 
-/// Exports material ranking table to CSV format.
+/// Puts the rankings into CSV.
 pub fn export_rankings_csv(items: &[RankedMaterialItem], metric: RankingMetric) -> String {
     let mut out = String::new();
     out.push_str("# MaterialSpace Engineering Rankings Export\n");
@@ -403,7 +403,7 @@ pub fn export_rankings_csv(items: &[RankedMaterialItem], metric: RankingMetric) 
 // 5. Physics Calculation Export
 // ----------------------------------------------------------------------------
 
-/// Exports a physics calculation record with inputs, outputs, formula, assumptions, and warnings.
+/// Puts a calculation into CSV along with its inputs, results, and warnings.
 pub fn export_calculation_csv(
     calc_name: &str,
     formula: &str,

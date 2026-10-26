@@ -1,12 +1,11 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
-/// Formats a physical quantity using scientific notation for very small (< 0.001)
-/// or very large (>= 10,000) values, while keeping ordinary numbers easily readable.
+/// Formats a number so tiny and huge values are easier to read.
 ///
-/// Preserves negative signs (e.g. negative thermal expansion coefficients in CFRP).
+/// Negative values keep their sign, and zero gets its own check so it doesn't
+/// accidentally end up in scientific notation.
 ///
-/// Special case for 0 is required because absolute value for 0 < 0.001, so it would otherwise trigger and print as 0.000e0
 pub fn format_scientific(value: f64) -> String {
     if value == 0.0 {
         return "0.0".to_string();
@@ -32,7 +31,7 @@ pub fn format_scientific(value: f64) -> String {
     }
 }
 
-/// Metadata for any authoritative scientific data source (e.g. NASA TPSX, NIST, MatWeb, ASM Handbook).
+/// A bit of information about where a material value came from.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SourceInfo {
     pub source_id: String,
@@ -44,65 +43,62 @@ pub struct SourceInfo {
     #[serde(default)]
     pub notes: String, // General notes about the source
     #[serde(default)]
-    pub spot_check_verified: Option<String>, // Notes about how source was verified
+    pub spot_check_verified: Option<String>, // Notes about how source was verified, does NOT mean every material is 100% correct
 }
 
-/// A material property value with accompanying measurement unit, source data,
-/// and the exact testing conditions and methods used to test it.
+/// A property value, along with its units and any test/source details we have.
 ///
-/// In materials science and engineering, a measurement without units, testing temperature,
-/// method, or source cannot be scientifically validated.
+/// Some of those details may be missing from the source data, so each one is optional.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Property {
-    /// Normalized value in standard SI units (e.g. kg/m³, Pa, W/(m·K), J/(kg·K), 1/K, K).
+    /// The value in SI units (kg/m³, Pa, W/(m·K), and so on).
     pub value: f64,
 
-    /// Standard SI unit string (e.g. "kg/m^3", "Pa", "W/(m*K)", "J/(kg*K)", "1/K", "K").
+    /// The SI unit used for `value`.
     #[serde(default)]
     pub unit: Option<String>,
 
-    /// Identifier of the scientific or engineering source providing this specific property.
+    /// Which source this value came from.
     #[serde(default)]
     pub source_id: Option<String>,
 
-    /// Measurement condition (e.g. "25 °C", "0.2% offset", "Solidus", "Through-thickness").
+    /// Test condition, if the source listed one.
     #[serde(default)]
     pub condition: Option<String>,
 
-    /// Specific test standard or method (e.g. "ASTM E8", "ASTM C1161", "3-point bend").
+    /// Test standard or method, if known.
     #[serde(default)]
     pub test_method: Option<String>,
 
-    /// Measurement temperature in Kelvin, if explicitly recorded.
+    /// Test temperature in Kelvin, if known.
     #[serde(default)]
     pub temperature: Option<f64>,
 
-    /// Original numerical value before unit normalization.
+    /// Original value before converting it to SI units.
     #[serde(default)]
     pub original_value: Option<f64>,
 
-    /// Original unit string before unit normalization.
+    /// Original unit before converting it to SI units.
     #[serde(default)]
     pub original_unit: Option<String>,
 
-    /// Uncertainty or tolerance range reported by the source (e.g. "±5%", "250-280 MPa").
+    /// Any uncertainty or range the source reported.
     #[serde(default)]
     pub uncertainty: Option<String>,
 
-    /// Additional scientific notes or caveats regarding this property.
+    /// Extra notes about this value.
     #[serde(default)]
     pub notes: Option<String>,
 
-    /// Any warning generated during normalization pipeline.
+    /// A warning from the data conversion step, if there was one.
     #[serde(default)]
     pub normalization_warning: Option<String>,
 }
 
 impl Property {
-    /// Returns the measurement condition or "Not recorded" if none was provided.
+    /// Returns the test condition, or says it wasn't recorded.
     ///
-    /// Remains fully transparent: never displays "Standard / Ambient" when no
-    /// ambient test condition was documented in the source dataset.
+    /// We don't fill in an ambient condition unless the source actually said so.
     pub fn condition_display(&self) -> &str {
         match self.condition.as_deref() {
             Some(cond) if !cond.trim().is_empty() => cond,
@@ -111,10 +107,9 @@ impl Property {
     }
 }
 
-/// Primary data structure representing an engineering material in MaterialSpace.
+/// The main data we keep for one material.
 ///
-/// All properties use `Option<Property>` to be scientifically honest:
-/// a missing property represents an unknown or unmeasured value, NOT zero.
+/// Properties are optional because missing data isn't the same thing as zero.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Material {
     pub id: String,
@@ -138,9 +133,6 @@ pub struct Material {
     pub youngs_modulus: Option<Property>,
     pub yield_strength: Option<Property>,
     pub tensile_strength: Option<Property>,
-    /// Separate flexural strength (bending strength / modulus of rupture).
-    /// Brittle ceramics and glasses report flexural strength, which must NEVER
-    /// be conflated with uniaxial tensile strength.
     pub flexural_strength: Option<Property>,
 
     // Thermal & Thermophysical Properties
@@ -170,7 +162,7 @@ impl Material {
         self.yield_strength.as_ref().map(|p| p.value)
     }
 
-    /// Ultimate tensile strength in Pa (only genuine tensile tests)
+    /// Ultimate tensile strength in Pa (only tensile tests)
     pub fn tensile_strength_val(&self) -> Option<f64> {
         self.tensile_strength.as_ref().map(|p| p.value)
     }
@@ -214,7 +206,7 @@ impl Material {
     }
 }
 
-/// Raw deserialization representation from the JSON database.
+/// The shape of a material record as it appears in the raw data.
 #[derive(Debug, Deserialize)]
 pub struct RawMaterial {
     pub id: String,

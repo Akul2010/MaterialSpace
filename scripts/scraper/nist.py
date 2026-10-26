@@ -19,11 +19,7 @@ logger = logging.getLogger(__name__)
 
 
 class NISTScraper:
-    """
-    Rudimentary NIST Chemistry WebBook scraper.
-
-    Primarily useful for pure substances and thermophysical data.
-    """
+    """Pulls a few useful substance properties from the NIST WebBook."""
 
     SOURCE_ID = "nist_webbook"
 
@@ -42,9 +38,7 @@ class NISTScraper:
             {"User-Agent": "MaterialSpace/0.1 (educational project)"}
         )
 
-    # --------------------------------------------------------
-    # SOURCE
-    # --------------------------------------------------------
+    # Source details
 
     def source_reference(
         self,
@@ -57,9 +51,7 @@ class NISTScraper:
             url=("https://webbook.nist.gov/chemistry/"),
         )
 
-    # --------------------------------------------------------
-    # HTTP
-    # --------------------------------------------------------
+    # Download pages
 
     def fetch(
         self,
@@ -80,9 +72,7 @@ class NISTScraper:
 
         return response.text
 
-    # --------------------------------------------------------
-    # MATERIAL
-    # --------------------------------------------------------
+    # Read material details
 
     def scrape_material(
         self,
@@ -118,9 +108,7 @@ class NISTScraper:
 
         return record
 
-    # --------------------------------------------------------
-    # NAME
-    # --------------------------------------------------------
+    # Find a display name
 
     def find_name(
         self,
@@ -147,9 +135,7 @@ class NISTScraper:
 
         return ""
 
-    # --------------------------------------------------------
-    # TEXT PARSING
-    # --------------------------------------------------------
+    # Pull values out of the page text
 
     def parse_text(
         self,
@@ -174,9 +160,7 @@ class NISTScraper:
             record,
         )
 
-    # --------------------------------------------------------
-    # MELTING
-    # --------------------------------------------------------
+    # Melting point
 
     def parse_melting_point(
         self,
@@ -214,9 +198,7 @@ class NISTScraper:
             ),
         )
 
-    # --------------------------------------------------------
-    # BOILING
-    # --------------------------------------------------------
+    # Boiling point
 
     def parse_boiling_point(
         self,
@@ -254,9 +236,7 @@ class NISTScraper:
             ),
         )
 
-    # --------------------------------------------------------
-    # BATCH
-    # --------------------------------------------------------
+    # Fetch several materials
 
     def scrape_many(
         self,

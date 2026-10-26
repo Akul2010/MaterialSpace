@@ -63,7 +63,7 @@ impl PhysicsWarning {
 // 1. Linear Thermal Expansion
 // ----------------------------------------------------------------------------
 
-/// Calculates linear thermal expansion:
+/// Works out how much a material expands as it heats up:
 ///
 /// ΔL = α · L₀ · ΔT
 ///
@@ -74,10 +74,8 @@ impl PhysicsWarning {
 ///
 /// Returns: Change in length ΔL in meters (m), or `None` if α is unavailable.
 ///
-/// ### Engineering Assumptions:
-/// 1. Unconstrained, free expansion in 1D.
-/// 2. Isotropic material behavior (expansion is identical in all directions).
-/// 3. Constant coefficient of thermal expansion (α) over the specified ΔT interval.
+/// This assumes the material can expand freely, expands the same way in every
+/// direction, and has a constant expansion coefficient over this temperature range.
 pub fn thermal_expansion(
     material: &Material,
     initial_length: f64,
@@ -100,7 +98,7 @@ pub fn thermal_expansion_raw(alpha: f64, initial_length: f64, delta_temperature:
 // 2. Sensible Heat Energy
 // ----------------------------------------------------------------------------
 
-/// Calculates thermal heat energy transferred:
+/// Works out the heat needed to change an object's temperature:
 ///
 /// Q = m · c · ΔT
 ///
@@ -111,10 +109,8 @@ pub fn thermal_expansion_raw(alpha: f64, initial_length: f64, delta_temperature:
 ///
 /// Returns: Heat energy Q in Joules (J).
 ///
-/// ### Engineering Assumptions:
-/// 1. Constant specific heat capacity over the temperature interval.
-/// 2. No latent heat / phase changes (solid-liquid-gas) occur.
-/// 3. Negligible heat loss to surrounding environment during the process.
+/// This assumes the specific heat stays constant, there's no phase change, and
+/// very little heat escapes to the surroundings.
 pub fn heat_energy(mass: f64, specific_heat: f64, delta_temperature: f64) -> f64 {
     mass * specific_heat * delta_temperature
 }
@@ -123,7 +119,7 @@ pub fn heat_energy(mass: f64, specific_heat: f64, delta_temperature: f64) -> f64
 // 3. Fully Constrained Thermal Stress
 // ----------------------------------------------------------------------------
 
-/// Calculates 1D thermal stress under fully constrained boundary conditions:
+/// Works out the stress when a material can't expand as it heats up:
 ///
 /// σ = E · α · ΔT
 ///
@@ -134,11 +130,8 @@ pub fn heat_energy(mass: f64, specific_heat: f64, delta_temperature: f64) -> f64
 ///
 /// Returns: Thermal stress σ in Pascals (Pa), or `None` if E or α is missing.
 ///
-/// ### Engineering Assumptions:
-/// 1. Fully constrained uniaxial bar (rigid ends, axial strain ε = 0).
-/// 2. Linear elastic behavior (Hooke's law: σ = E · ε_thermal).
-/// 3. Homogeneous and isotropic material.
-/// 4. No structural buckling occurs under compressive thermal load.
+/// This is a simple 1D estimate. It assumes the ends are fixed, the material
+/// stays elastic and uniform, and the part doesn't buckle.
 pub fn thermal_stress(material: &Material, delta_temperature: f64) -> Option<f64> {
     let youngs_modulus = material.youngs_modulus_val()?;
     let alpha = material.thermal_expansion_val()?;
@@ -154,7 +147,7 @@ pub fn thermal_stress_raw(youngs_modulus: f64, alpha: f64, delta_temperature: f6
 // 4. Steady-State 1D Heat Conduction (Fourier's Law)
 // ----------------------------------------------------------------------------
 
-/// Calculates 1D steady-state heat conduction across a plane wall:
+/// Estimates steady heat flow through a flat wall:
 ///
 /// q = (k · A · ΔT) / L
 /// q'' = q / A = (k · ΔT) / L
@@ -167,11 +160,8 @@ pub fn thermal_stress_raw(youngs_modulus: f64, alpha: f64, delta_temperature: f6
 ///
 /// Returns: `Some((q_watts, heat_flux_w_m2))` or `None` if k is missing or L <= 0.
 ///
-/// ### Engineering Assumptions:
-/// 1. One-dimensional, steady-state heat transfer.
-/// 2. Constant thermal conductivity (k) across the thickness.
-/// 3. Isothermal plane surfaces with uniform boundary temperatures.
-/// 4. No internal volumetric heat generation.
+/// This assumes heat only moves through the thickness, the temperatures and
+/// conductivity stay steady, and there's no heat being made inside the wall.
 pub fn heat_conduction(
     material: &Material,
     area_m2: f64,
@@ -201,8 +191,7 @@ pub fn heat_conduction_raw(
 // 5. Thermal Diffusion Timescale Estimate
 // ----------------------------------------------------------------------------
 
-/// Estimates the characteristic timescale for transient thermal diffusion
-/// across a characteristic thickness L:
+/// Estimates how long heat takes to spread across a thickness:
 ///
 /// τ ≈ L² / α_diff = (L² · ρ · c_p) / k
 ///
@@ -215,9 +204,7 @@ pub fn heat_conduction_raw(
 ///
 /// Returns: Characteristic timescale τ in seconds (s), or `None` if required data is missing.
 ///
-/// ### Engineering Significance:
-/// This order-of-magnitude timescale indicates how rapidly thermal equilibrium
-/// is approached across a component (e.g. TPS heat shield or heat sink wall).
+/// Treat this as a rough timescale, not an exact prediction.
 pub fn thermal_diffusion_timescale(material: &Material, thickness_m: f64) -> Option<f64> {
     let k = material.thermal_conductivity_val()?;
     let rho = material.density_val()?;
@@ -239,7 +226,7 @@ pub fn thermal_diffusion_timescale_raw(k: f64, rho: f64, cp: f64, thickness_m: f
 // Sanity Check Evaluation
 // ----------------------------------------------------------------------------
 
-/// Checks a calculation for physical sanity against material properties.
+/// Checks a result for a few obvious problems using the material's properties.
 pub fn evaluate_sanity_checks(
     material: &Material,
     delta_temp: f64,
