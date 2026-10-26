@@ -163,21 +163,21 @@ impl LocalCacheManager {
 
 /// Conservative Material Identity Matcher.
 ///
-/// **Scientific Honesty Rule**: Never merges records solely because their names look similar
-/// (e.g. Al2O3 vs Alumina 99.5% vs Alumina 96%). Only merges if canonical IDs, exact names,
-/// or documented aliases match with compatible compositions.
+/// This is a very careful "are these the same material?" check.
+/// We do not merge records just because the names look a little similar.
+/// The function only says "yes" when the IDs, names, or known aliases are an exact match.
 pub fn is_conservative_match(existing: &Material, incoming_id: &str, incoming_name: &str) -> bool {
-    // 1. Exact ID match
+    // 1) Exact ID match: same canonical material ID, so this is almost certainly the same item.
     if existing.id == incoming_id {
         return true;
     }
 
-    // 2. Exact case-insensitive canonical name match
+    // 2) Exact case-insensitive canonical name match.
     if existing.name.eq_ignore_ascii_case(incoming_name) {
         return true;
     }
 
-    // 3. Known exact alias match
+    // 3) Known exact alias match.
     for alias in &existing.aliases {
         if alias.eq_ignore_ascii_case(incoming_name) || alias.eq_ignore_ascii_case(incoming_id) {
             return true;

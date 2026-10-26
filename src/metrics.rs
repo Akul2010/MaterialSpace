@@ -106,9 +106,13 @@ pub struct AerospaceScoreResult {
 /// for melting point, and 0-200 W/(m·K) for conductivity. Missing strength or
 /// density means there's no score.
 pub fn aerospace_suitability_score(material: &Material) -> Option<AerospaceScoreResult> {
+    // This is a simple "score a material" helper. It does not replace a real engineering review.
+    // The numbers below are just a rough way to compare materials on a few important properties.
     let density = material.density_val()?;
-    // Prefers tensile strength, transparently notes when using yield strength
-    let (strength, is_yield) = match material.tensile_strength_val() {
+
+    // If there is no real tensile test, we can still use yield strength as a backup.
+    // The code keeps track of that with `is_yield` so the user can see why the score is a little different.
+    let (strength_value, is_yield) = match material.tensile_strength_val() {
         Some(ts) => (ts, false),
         None => match material.yield_strength_val() {
             Some(ys) => (ys, true),
@@ -120,8 +124,8 @@ pub fn aerospace_suitability_score(material: &Material) -> Option<AerospaceScore
         return None;
     }
 
-    let mut score = 0.0;
-    let mut total_weight = 0.0;
+    let mut score_total = 0.0;
+    let mut weighted_score_total = 0.0;
     let mut properties_used = 0;
     let total_properties = 4;
     let mut caveats = Vec::new();
@@ -130,45 +134,45 @@ pub fn aerospace_suitability_score(material: &Material) -> Option<AerospaceScore
         caveats.push("Tensile strength unavailable; score utilizes yield strength.".into());
     }
 
-    // 1. Specific Strength (Weight = 40.0)
-    let spec_str = strength / density;
-    let norm_spec_str = ((spec_str - 20_000.0) / (220_000.0 - 20_000.0)).clamp(0.0, 1.0);
-    score += norm_spec_str * 40.0;
-    total_weight += 40.0;
+    // 1) Specific strength: "how strong is it for its weight?"
+    let strength_per_density = strength_value / density;
+    let normalized_strength = ((strength_per_density - 20_000.0) / (220_000.0 - 20_000.0)).clamp(0.0, 1.0);
+    score_total += normalized_strength * 40.0;
+    weighted_score_total += 40.0;
     properties_used += 1;
 
-    // 2. Specific Stiffness (Weight = 35.0)
-    if let Some(e) = material.youngs_modulus_val() {
-        let spec_stiff = e / density;
-        let norm_stiff = ((spec_stiff - 5.0e6) / (35.0e6 - 5.0e6)).clamp(0.0, 1.0);
-        score += norm_stiff * 35.0;
-        total_weight += 35.0;
+    // 2) Specific stiffness: "how stiff is it for its weight?"
+    if let Some(modulus_value) = material.youngs_modulus_val() {
+        let stiffness_per_density = modulus_value / density;
+        let normalized_stiffness = ((stiffness_per_density - 5.0e6) / (35.0e6 - 5.0e6)).clamp(0.0, 1.0);
+        score_total += normalized_stiffness * 35.0;
+        weighted_score_total += 35.0;
         properties_used += 1;
     } else {
         caveats.push("Young's modulus unavailable for specific stiffness evaluation.".into());
     }
 
-    // 3. Melting Point (Weight = 15.0)
-    if let Some(tm) = material.melting_point_val() {
-        let norm_temp = ((tm - 500.0) / (2500.0 - 500.0)).clamp(0.0, 1.0);
-        score += norm_temp * 15.0;
-        total_weight += 15.0;
+    // 3) Melting point: high heat resistance is good for hot environments.
+    if let Some(melting_temp) = material.melting_point_val() {
+        let normalized_temperature = ((melting_temp - 500.0) / (2500.0 - 500.0)).clamp(0.0, 1.0);
+        score_total += normalized_temperature * 15.0;
+        weighted_score_total += 15.0;
         properties_used += 1;
     } else {
         caveats.push("Melting point unavailable for thermal capability evaluation.".into());
     }
 
-    // 4. Thermal Conductivity (Weight = 10.0)
-    if let Some(k) = material.thermal_conductivity_val() {
-        let norm_k = (k / 200.0).clamp(0.0, 1.0);
-        score += norm_k * 10.0;
-        total_weight += 10.0;
+    // 4) Thermal conductivity: good for moving heat away, not always good for insulation.
+    if let Some(k_value) = material.thermal_conductivity_val() {
+        let normalized_thermal_conductivity = (k_value / 200.0).clamp(0.0, 1.0);
+        score_total += normalized_thermal_conductivity * 10.0;
+        weighted_score_total += 10.0;
         properties_used += 1;
     } else {
         caveats.push("Thermal conductivity unavailable.".into());
     }
 
-    // Special engineering notes for specific materials
+    // This is one of those weird material-specific notes: some materials get an extra caveat.
     if material.id == "diamond_cvd" {
         caveats.push(
             "Note: CVD diamond exhibits extraordinary stiffness and thermal conductivity, \
@@ -178,11 +182,11 @@ pub fn aerospace_suitability_score(material: &Material) -> Option<AerospaceScore
         );
     }
 
-    if total_weight == 0.0 {
+    if weighted_score_total == 0.0 {
         return None;
     }
 
-    let final_score = (score / total_weight) * 100.0;
+    let final_score = (score_total / weighted_score_total) * 100.0;
     let data_completeness = properties_used as f32 / total_properties as f32;
 
     Some(AerospaceScoreResult {

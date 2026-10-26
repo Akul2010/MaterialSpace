@@ -81,9 +81,11 @@ pub fn thermal_expansion(
     initial_length: f64,
     delta_temperature: f64,
 ) -> Option<f64> {
-    let alpha = material.thermal_expansion_val()?;
+    // This is the same as the textbook formula: change in length = alpha * length * temp change.
+    // We keep the original behavior, just with names that are easier to read.
+    let thermal_expansion_coeff = material.thermal_expansion_val()?;
     Some(thermal_expansion_raw(
-        alpha,
+        thermal_expansion_coeff,
         initial_length,
         delta_temperature,
     ))
@@ -91,6 +93,7 @@ pub fn thermal_expansion(
 
 /// Raw calculation of linear thermal expansion: ΔL = α · L₀ · ΔT
 pub fn thermal_expansion_raw(alpha: f64, initial_length: f64, delta_temperature: f64) -> f64 {
+    // This is the straightforward formula. Nothing fancy, just multiply the three values together.
     alpha * initial_length * delta_temperature
 }
 
@@ -133,13 +136,20 @@ pub fn heat_energy(mass: f64, specific_heat: f64, delta_temperature: f64) -> f64
 /// This is a simple 1D estimate. It assumes the ends are fixed, the material
 /// stays elastic and uniform, and the part doesn't buckle.
 pub fn thermal_stress(material: &Material, delta_temperature: f64) -> Option<f64> {
-    let youngs_modulus = material.youngs_modulus_val()?;
-    let alpha = material.thermal_expansion_val()?;
-    Some(thermal_stress_raw(youngs_modulus, alpha, delta_temperature))
+    // If a part is held in place while it heats up, it creates stress.
+    // The formula is the same as in the notes: stress = stiffness * expansion * temp change.
+    let material_stiffness = material.youngs_modulus_val()?;
+    let thermal_expansion_coeff = material.thermal_expansion_val()?;
+    Some(thermal_stress_raw(
+        material_stiffness,
+        thermal_expansion_coeff,
+        delta_temperature,
+    ))
 }
 
 /// Raw calculation of 1D fully constrained thermal stress: σ = E · α · ΔT
 pub fn thermal_stress_raw(youngs_modulus: f64, alpha: f64, delta_temperature: f64) -> f64 {
+    // Another simple multiplication formula. The complicated name is just the physics term.
     youngs_modulus * alpha * delta_temperature
 }
 
@@ -168,8 +178,9 @@ pub fn heat_conduction(
     thickness_m: f64,
     delta_temperature_k: f64,
 ) -> Option<(f64, f64)> {
-    let k = material.thermal_conductivity_val()?;
-    heat_conduction_raw(k, area_m2, thickness_m, delta_temperature_k)
+    // Fourier's law is basically: how much heat moves depends on the material, area, and temperature difference.
+    let conductivity = material.thermal_conductivity_val()?;
+    heat_conduction_raw(conductivity, area_m2, thickness_m, delta_temperature_k)
 }
 
 /// Raw calculation of 1D steady-state heat conduction: returns `(q_watts, heat_flux_w_m2)`
@@ -182,6 +193,7 @@ pub fn heat_conduction_raw(
     if thickness_m <= 0.0 || area_m2 <= 0.0 {
         return None;
     }
+    // This is the standard steady-state equation: heat flow = k * area * temp difference / thickness.
     let heat_flux = (k * delta_temperature_k) / thickness_m;
     let total_heat_rate = heat_flux * area_m2;
     Some((total_heat_rate, heat_flux))

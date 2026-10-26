@@ -17,18 +17,27 @@ pub struct Database {
 
 impl Database {
     /// Loads local data when available, then fills in from the bundled copy.
+    ///
+    /// The idea is simple
+    /// 1. Try to read the real data files from the project folder.
+    /// 2. If the files are missing or broken, fall back to the built-in default data.
+    /// 3. Add any cached records we saved earlier.
+    /// 4. Sort everything alphabetically by material name.
     pub fn load() -> Result<Self, String> {
         let materials_path = Path::new("data/materials_normalized.json");
         let sources_path = Path::new("data/sources.json");
         let cache_manager = LocalCacheManager::new(".");
 
-        let mut is_embedded = false;
+        let mut used_embedded_data = false;
 
-        // Load the source details.
+        // Read the source info first. If the file is not there, just use the built-in list.
         let sources: SourcesMap = if sources_path.exists() {
             match fs::read_to_string(sources_path) {
                 Ok(content) => serde_json::from_str(&content).unwrap_or_else(|e| {
-                    eprintln!("Warning: Failed to parse external sources.json: {}. Using embedded fallback.", e);
+                    eprintln!(
+                        "Warning: Failed to parse external sources.json: {}. Using embedded fallback.",
+                        e
+                    );
                     serde_json::from_str(BUNDLED_SOURCES_JSON).unwrap_or_default()
                 }),
                 Err(_) => serde_json::from_str(BUNDLED_SOURCES_JSON).unwrap_or_default(),
@@ -37,7 +46,7 @@ impl Database {
             serde_json::from_str(BUNDLED_SOURCES_JSON).unwrap_or_default()
         };
 
-        // Load the materials.
+        // Try to read the real material list. If that file is missing or invalid, the fallback data is used.
         let raw_materials: Vec<RawMaterial> = if materials_path.exists() {
             match fs::read_to_string(materials_path) {
                 Ok(content) => match serde_json::from_str::<Vec<RawMaterial>>(&content) {
@@ -59,33 +68,32 @@ impl Database {
                 }
             }
         } else {
-            // Load compiled-in bundled baseline
-            is_embedded = true;
+            used_embedded_data = true;
             serde_json::from_str(BUNDLED_MATERIALS_JSON)
                 .map_err(|e| format!("Corrupt embedded baseline materials JSON: {}", e))?
         };
 
-        let mut materials: Vec<Material> = raw_materials.into_iter().map(Material::from).collect();
+        let mut all_materials: Vec<Material> = raw_materials.into_iter().map(Material::from).collect();
 
-        // Add cached materials without replacing the ones already here.
+        // Add cached materials, but do not overwrite an already-known record if it is the same material.
         let cached_records = cache_manager.load_cached_materials();
-        for cached in cached_records {
-            let already_exists = materials
+        for cached_material in cached_records {
+            let already_in_list = all_materials
                 .iter()
-                .any(|m| is_conservative_match(m, &cached.id, &cached.name));
-            if !already_exists {
-                materials.push(cached);
+                .any(|material| is_conservative_match(material, &cached_material.id, &cached_material.name));
+            if !already_in_list {
+                all_materials.push(cached_material);
             }
         }
 
-        // Keep the list in name order for the UI.
-        materials.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
+        // Keep the list easy to browse in the app by sorting it alphabetically by name.
+        all_materials.sort_by(|left, right| left.name.to_lowercase().cmp(&right.name.to_lowercase()));
 
         Ok(Self {
-            materials,
+            materials: all_materials,
             sources,
             cache_manager,
-            is_from_embedded_fallback: is_embedded,
+            is_from_embedded_fallback: used_embedded_data,
         })
     }
 

@@ -98,7 +98,9 @@ pub struct Property {
 impl Property {
     /// Returns the test condition, or says it wasn't recorded.
     ///
-    /// We don't fill in an ambient condition unless the source actually said so.
+    /// This is just a small helper so the UI does not show an empty string when the data source
+    /// did not tell us the testing condition. Beginners can think of it as: "if the condition exists,
+    /// use it; otherwise, show a simple fallback value."
     pub fn condition_display(&self) -> &str {
         match self.condition.as_deref() {
             Some(cond) if !cond.trim().is_empty() => cond,

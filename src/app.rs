@@ -181,7 +181,8 @@ impl MaterialSpaceApp {
             export_notice: None,
         };
 
-        // Initialize calculator synchronization for the initial selection
+        // When the app starts, we pick a default material and make sure all the calculator boxes
+        // are using that same material. This keeps the UI from showing mismatched or stale values.
         app.sync_calculator_material(default_first);
         app
     }
