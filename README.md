@@ -1,3 +1,5 @@
+This was the code submitted to the 2026 Congressional App Challenge.
+
 # MaterialSpace
 
 MaterialSpace is a desktop app for exploring engineering materials and comparing their properties. It includes a searchable materials database, side-by-side comparisons, filters for finding materials that meet requirements, rankings, and calculators for common heat and temperature-related problems.
